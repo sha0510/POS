@@ -1,0 +1,1490 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="posModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="posModelStoreContainer">
+          <EntitySet Name="address" EntityType="posModel.Store.address" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="companyinfo" EntityType="posModel.Store.companyinfo" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="customer" EntityType="posModel.Store.customer" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="department" EntityType="posModel.Store.department" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="menu" EntityType="posModel.Store.menu" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="orderchild" EntityType="posModel.Store.orderchild" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="ordermaster" EntityType="posModel.Store.ordermaster" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="permissions" EntityType="posModel.Store.permissions" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="postcode" EntityType="posModel.Store.postcode" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="product" EntityType="posModel.Store.product" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="productbutton" EntityType="posModel.Store.productbutton" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="productcategory" EntityType="posModel.Store.productcategory" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="productingredients" EntityType="posModel.Store.productingredients" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="rawstocklistchild" EntityType="posModel.Store.rawstocklistchild" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="rawstocklistmaster" EntityType="posModel.Store.rawstocklistmaster" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="rawstockproduct" EntityType="posModel.Store.rawstockproduct" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="securitygroup" EntityType="posModel.Store.securitygroup" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="securitygrouppermission" EntityType="posModel.Store.securitygrouppermission" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="servicetype" EntityType="posModel.Store.servicetype" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="staff" EntityType="posModel.Store.staff" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="user" EntityType="posModel.Store.user" store:Type="Tables" Schema="posdb" />
+          <AssociationSet Name="fk_address_postcode1" Association="posModel.Store.fk_address_postcode1">
+            <End Role="postcode" EntitySet="postcode" />
+            <End Role="address" EntitySet="address" />
+          </AssociationSet>
+          <AssociationSet Name="fk_companyinfo_address1" Association="posModel.Store.fk_companyinfo_address1">
+            <End Role="address" EntitySet="address" />
+            <End Role="companyinfo" EntitySet="companyinfo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_customer_address1" Association="posModel.Store.fk_customer_address1">
+            <End Role="address" EntitySet="address" />
+            <End Role="customer" EntitySet="customer" />
+          </AssociationSet>
+          <AssociationSet Name="fk_orderchild_ordermaster1" Association="posModel.Store.fk_orderchild_ordermaster1">
+            <End Role="ordermaster" EntitySet="ordermaster" />
+            <End Role="orderchild" EntitySet="orderchild" />
+          </AssociationSet>
+          <AssociationSet Name="fk_orderchild_product1" Association="posModel.Store.fk_orderchild_product1">
+            <End Role="product" EntitySet="product" />
+            <End Role="orderchild" EntitySet="orderchild" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ordermaster_servicetype1" Association="posModel.Store.fk_ordermaster_servicetype1">
+            <End Role="servicetype" EntitySet="servicetype" />
+            <End Role="ordermaster" EntitySet="ordermaster" />
+          </AssociationSet>
+          <AssociationSet Name="fk_product_menu1" Association="posModel.Store.fk_product_menu1">
+            <End Role="menu" EntitySet="menu" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="fk_product_productcategory1" Association="posModel.Store.fk_product_productcategory1">
+            <End Role="productcategory" EntitySet="productcategory" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="fk_productbutton_product1" Association="posModel.Store.fk_productbutton_product1">
+            <End Role="product" EntitySet="product" />
+            <End Role="productbutton" EntitySet="productbutton" />
+          </AssociationSet>
+          <AssociationSet Name="fk_productingredients_product" Association="posModel.Store.fk_productingredients_product">
+            <End Role="product" EntitySet="product" />
+            <End Role="productingredients" EntitySet="productingredients" />
+          </AssociationSet>
+          <AssociationSet Name="fk_rawstocklistchild_rawstocklistmaster1" Association="posModel.Store.fk_rawstocklistchild_rawstocklistmaster1">
+            <End Role="rawstocklistmaster" EntitySet="rawstocklistmaster" />
+            <End Role="rawstocklistchild" EntitySet="rawstocklistchild" />
+          </AssociationSet>
+          <AssociationSet Name="fk_rawstocklistchild_rawstockproduct1" Association="posModel.Store.fk_rawstocklistchild_rawstockproduct1">
+            <End Role="rawstockproduct" EntitySet="rawstockproduct" />
+            <End Role="rawstocklistchild" EntitySet="rawstocklistchild" />
+          </AssociationSet>
+          <AssociationSet Name="fk_securitygrouppermission_permissions1" Association="posModel.Store.fk_securitygrouppermission_permissions1">
+            <End Role="permissions" EntitySet="permissions" />
+            <End Role="securitygrouppermission" EntitySet="securitygrouppermission" />
+          </AssociationSet>
+          <AssociationSet Name="fk_securitygrouppermission_securitygroup1" Association="posModel.Store.fk_securitygrouppermission_securitygroup1">
+            <End Role="securitygroup" EntitySet="securitygroup" />
+            <End Role="securitygrouppermission" EntitySet="securitygrouppermission" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_address1" Association="posModel.Store.fk_staff_address1">
+            <End Role="address" EntitySet="address" />
+            <End Role="staff" EntitySet="staff" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_depertment1" Association="posModel.Store.fk_staff_depertment1">
+            <End Role="department" EntitySet="department" />
+            <End Role="staff" EntitySet="staff" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_securitygroup1" Association="posModel.Store.fk_user_securitygroup1">
+            <End Role="securitygroup" EntitySet="securitygroup" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_staff1" Association="posModel.Store.fk_user_staff1">
+            <End Role="staff" EntitySet="staff" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="buildingname" Type="varchar" MaxLength="100" />
+          <Property Name="houseno" Type="varchar" MaxLength="10" />
+          <Property Name="street" Type="varchar" MaxLength="50" />
+          <Property Name="locality" Type="varchar" MaxLength="100" />
+          <Property Name="postaltown" Type="varchar" MaxLength="100" />
+          <Property Name="country" Type="varchar" MaxLength="100" />
+          <Property Name="postcode_id" Type="int" />
+        </EntityType>
+        <EntityType Name="companyinfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="phone" Type="varchar" MaxLength="15" />
+          <Property Name="fax" Type="varchar" MaxLength="15" />
+          <Property Name="servicephone" Type="varchar" MaxLength="15" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="website" Type="varchar" MaxLength="50" />
+          <Property Name="vatregistrationnumber" Type="varchar" MaxLength="20" />
+          <Property Name="address_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="varchar" MaxLength="15" />
+          <Property Name="type" Type="varchar" MaxLength="10" />
+          <Property Name="lastname" Type="varchar" MaxLength="100" />
+          <Property Name="firstname" Type="varchar" MaxLength="100" />
+          <Property Name="phone" Type="varchar" MaxLength="20" />
+          <Property Name="mobile" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="status" Type="varchar" MaxLength="45" />
+          <Property Name="creditlimit" Type="varchar" MaxLength="45" />
+          <Property Name="image" Type="longblob" />
+          <Property Name="address_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="description" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="menu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="description" Type="varchar" MaxLength="255" />
+          <Property Name="position" Type="int" />
+          <Property Name="buttoncolor" Type="varchar" MaxLength="15" />
+          <Property Name="buttontextcolor" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="orderchild">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="amount" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="producttype" Type="varchar" MaxLength="20" />
+          <Property Name="ordermaster_id" Type="int" Nullable="false" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ordermaster">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ticketno" Type="varchar" MaxLength="50" />
+          <Property Name="orderdate" Type="datetime" />
+          <Property Name="customercode" Type="varchar" MaxLength="50" />
+          <Property Name="paymentstatus" Type="varchar" MaxLength="20" />
+          <Property Name="subtotal" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="discountamount" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="deliverycharge" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="grandtotal" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="server" Type="varchar" MaxLength="45" />
+          <Property Name="paidamount" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="paytype" Type="varchar" MaxLength="20" />
+          <Property Name="printreceiptcopies" Type="int" />
+          <Property Name="servicetype_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="permissions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="postcode">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="receiptdescription" Type="varchar" MaxLength="100" />
+          <Property Name="status" Type="varchar" MaxLength="45" />
+          <Property Name="prepproduct" Type="varchar" MaxLength="45" />
+          <Property Name="preplocation" Type="varchar" MaxLength="50" />
+          <Property Name="buyingprice" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="dineinprice" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="collectionprice" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="waitingprice" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="deliveryprice" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="allprice" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="stockproduct" Type="varchar" MaxLength="10" />
+          <Property Name="stockquantity" Type="int" />
+          <Property Name="discountable" Type="varchar" MaxLength="10" />
+          <Property Name="popupmessage" Type="varchar" MaxLength="255" />
+          <Property Name="lookupcode" Type="varchar" MaxLength="15" />
+          <Property Name="receiptcopies" Type="int" />
+          <Property Name="image" Type="longblob" />
+          <Property Name="productcategory_id" Type="int" Nullable="false" />
+          <Property Name="menu_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="productbutton">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="color" Type="varchar" MaxLength="20" />
+          <Property Name="textcolor" Type="varchar" MaxLength="20" />
+          <Property Name="fontsize" Type="int" />
+          <Property Name="textbold" Type="bool" />
+        </EntityType>
+        <EntityType Name="productcategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="categorytype" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="productingredients">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ingredient" Type="varchar" MaxLength="100" />
+          <Property Name="chargeable" Type="bool" />
+          <Property Name="amount" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rawstocklistchild">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="amount" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="rawstocklistmaster_id" Type="int" Nullable="false" />
+          <Property Name="rawstockproduct_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rawstocklistmaster">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="total" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="comment" Type="varchar" MaxLength="255" />
+          <Property Name="server" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="rawstockproduct">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="varchar" MaxLength="20" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="buyingprice" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="quantity" Type="int" />
+        </EntityType>
+        <EntityType Name="securitygroup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="description" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="securitygrouppermission">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="permissions_id" Type="int" Nullable="false" />
+          <Property Name="securitygroup_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="servicetype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="servicetype" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="staff">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="varchar" MaxLength="20" />
+          <Property Name="lastname" Type="varchar" MaxLength="100" />
+          <Property Name="firstname" Type="varchar" MaxLength="100" />
+          <Property Name="dateofbirth" Type="date" />
+          <Property Name="designation" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="20" />
+          <Property Name="mobile" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="hiredate" Type="date" />
+          <Property Name="status" Type="varchar" MaxLength="10" />
+          <Property Name="image" Type="longblob" />
+          <Property Name="department_id" Type="int" Nullable="false" />
+          <Property Name="address_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="status" Type="varchar" MaxLength="15" />
+          <Property Name="securitygroup_id" Type="int" Nullable="false" />
+          <Property Name="staff_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_address_postcode1">
+          <End Role="postcode" Type="posModel.Store.postcode" Multiplicity="0..1" />
+          <End Role="address" Type="posModel.Store.address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="postcode">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="address">
+              <PropertyRef Name="postcode_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_companyinfo_address1">
+          <End Role="address" Type="posModel.Store.address" Multiplicity="1" />
+          <End Role="companyinfo" Type="posModel.Store.companyinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="address">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="companyinfo">
+              <PropertyRef Name="address_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_customer_address1">
+          <End Role="address" Type="posModel.Store.address" Multiplicity="1" />
+          <End Role="customer" Type="posModel.Store.customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="address">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="customer">
+              <PropertyRef Name="address_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_orderchild_ordermaster1">
+          <End Role="ordermaster" Type="posModel.Store.ordermaster" Multiplicity="1" />
+          <End Role="orderchild" Type="posModel.Store.orderchild" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ordermaster">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="orderchild">
+              <PropertyRef Name="ordermaster_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_orderchild_product1">
+          <End Role="product" Type="posModel.Store.product" Multiplicity="1" />
+          <End Role="orderchild" Type="posModel.Store.orderchild" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="orderchild">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ordermaster_servicetype1">
+          <End Role="servicetype" Type="posModel.Store.servicetype" Multiplicity="1" />
+          <End Role="ordermaster" Type="posModel.Store.ordermaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="servicetype">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ordermaster">
+              <PropertyRef Name="servicetype_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_product_menu1">
+          <End Role="menu" Type="posModel.Store.menu" Multiplicity="1" />
+          <End Role="product" Type="posModel.Store.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="menu">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="menu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_product_productcategory1">
+          <End Role="productcategory" Type="posModel.Store.productcategory" Multiplicity="1" />
+          <End Role="product" Type="posModel.Store.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productcategory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="productcategory_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_productbutton_product1">
+          <End Role="product" Type="posModel.Store.product" Multiplicity="1" />
+          <End Role="productbutton" Type="posModel.Store.productbutton" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="productbutton">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_productingredients_product">
+          <End Role="product" Type="posModel.Store.product" Multiplicity="1" />
+          <End Role="productingredients" Type="posModel.Store.productingredients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="productingredients">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_rawstocklistchild_rawstocklistmaster1">
+          <End Role="rawstocklistmaster" Type="posModel.Store.rawstocklistmaster" Multiplicity="1" />
+          <End Role="rawstocklistchild" Type="posModel.Store.rawstocklistchild" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rawstocklistmaster">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="rawstocklistchild">
+              <PropertyRef Name="rawstocklistmaster_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_rawstocklistchild_rawstockproduct1">
+          <End Role="rawstockproduct" Type="posModel.Store.rawstockproduct" Multiplicity="1" />
+          <End Role="rawstocklistchild" Type="posModel.Store.rawstocklistchild" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rawstockproduct">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="rawstocklistchild">
+              <PropertyRef Name="rawstockproduct_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_securitygrouppermission_permissions1">
+          <End Role="permissions" Type="posModel.Store.permissions" Multiplicity="1" />
+          <End Role="securitygrouppermission" Type="posModel.Store.securitygrouppermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="permissions">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="securitygrouppermission">
+              <PropertyRef Name="permissions_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_securitygrouppermission_securitygroup1">
+          <End Role="securitygroup" Type="posModel.Store.securitygroup" Multiplicity="1" />
+          <End Role="securitygrouppermission" Type="posModel.Store.securitygrouppermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="securitygroup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="securitygrouppermission">
+              <PropertyRef Name="securitygroup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_address1">
+          <End Role="address" Type="posModel.Store.address" Multiplicity="1" />
+          <End Role="staff" Type="posModel.Store.staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="address">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="staff">
+              <PropertyRef Name="address_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_depertment1">
+          <End Role="department" Type="posModel.Store.department" Multiplicity="1" />
+          <End Role="staff" Type="posModel.Store.staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="staff">
+              <PropertyRef Name="department_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_securitygroup1">
+          <End Role="securitygroup" Type="posModel.Store.securitygroup" Multiplicity="1" />
+          <End Role="user" Type="posModel.Store.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="securitygroup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="securitygroup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_staff1">
+          <End Role="staff" Type="posModel.Store.staff" Multiplicity="1" />
+          <End Role="user" Type="posModel.Store.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="staff">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="staff_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="posModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="POSDB" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="addresses" EntityType="posModel.address" />
+          <EntitySet Name="companyinfoes" EntityType="posModel.companyinfo" />
+          <EntitySet Name="customers" EntityType="posModel.customer" />
+          <EntitySet Name="departments" EntityType="posModel.department" />
+          <EntitySet Name="menus" EntityType="posModel.menu" />
+          <EntitySet Name="orderchilds" EntityType="posModel.orderchild" />
+          <EntitySet Name="ordermasters" EntityType="posModel.ordermaster" />
+          <EntitySet Name="permissions" EntityType="posModel.permission" />
+          <EntitySet Name="postcodes" EntityType="posModel.postcode" />
+          <EntitySet Name="products" EntityType="posModel.product" />
+          <EntitySet Name="productbuttons" EntityType="posModel.productbutton" />
+          <EntitySet Name="productcategories" EntityType="posModel.productcategory" />
+          <EntitySet Name="productingredients" EntityType="posModel.productingredient" />
+          <EntitySet Name="rawstocklistchilds" EntityType="posModel.rawstocklistchild" />
+          <EntitySet Name="rawstocklistmasters" EntityType="posModel.rawstocklistmaster" />
+          <EntitySet Name="rawstockproducts" EntityType="posModel.rawstockproduct" />
+          <EntitySet Name="securitygroups" EntityType="posModel.securitygroup" />
+          <EntitySet Name="securitygrouppermissions" EntityType="posModel.securitygrouppermission" />
+          <EntitySet Name="servicetypes" EntityType="posModel.servicetype" />
+          <EntitySet Name="staffs" EntityType="posModel.staff" />
+          <EntitySet Name="users" EntityType="posModel.user" />
+          <AssociationSet Name="fk_address_postcode1" Association="posModel.fk_address_postcode1">
+            <End Role="postcode" EntitySet="postcodes" />
+            <End Role="address" EntitySet="addresses" />
+          </AssociationSet>
+          <AssociationSet Name="fk_companyinfo_address1" Association="posModel.fk_companyinfo_address1">
+            <End Role="address" EntitySet="addresses" />
+            <End Role="companyinfo" EntitySet="companyinfoes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_customer_address1" Association="posModel.fk_customer_address1">
+            <End Role="address" EntitySet="addresses" />
+            <End Role="customer" EntitySet="customers" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_address1" Association="posModel.fk_staff_address1">
+            <End Role="address" EntitySet="addresses" />
+            <End Role="staff" EntitySet="staffs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_depertment1" Association="posModel.fk_staff_depertment1">
+            <End Role="department" EntitySet="departments" />
+            <End Role="staff" EntitySet="staffs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_product_menu1" Association="posModel.fk_product_menu1">
+            <End Role="menu" EntitySet="menus" />
+            <End Role="product" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="fk_orderchild_ordermaster1" Association="posModel.fk_orderchild_ordermaster1">
+            <End Role="ordermaster" EntitySet="ordermasters" />
+            <End Role="orderchild" EntitySet="orderchilds" />
+          </AssociationSet>
+          <AssociationSet Name="fk_orderchild_product1" Association="posModel.fk_orderchild_product1">
+            <End Role="product" EntitySet="products" />
+            <End Role="orderchild" EntitySet="orderchilds" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ordermaster_servicetype1" Association="posModel.fk_ordermaster_servicetype1">
+            <End Role="servicetype" EntitySet="servicetypes" />
+            <End Role="ordermaster" EntitySet="ordermasters" />
+          </AssociationSet>
+          <AssociationSet Name="fk_securitygrouppermission_permissions1" Association="posModel.fk_securitygrouppermission_permissions1">
+            <End Role="permissions" EntitySet="permissions" />
+            <End Role="securitygrouppermission" EntitySet="securitygrouppermissions" />
+          </AssociationSet>
+          <AssociationSet Name="fk_product_productcategory1" Association="posModel.fk_product_productcategory1">
+            <End Role="productcategory" EntitySet="productcategories" />
+            <End Role="product" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="fk_productbutton_product1" Association="posModel.fk_productbutton_product1">
+            <End Role="product" EntitySet="products" />
+            <End Role="productbutton" EntitySet="productbuttons" />
+          </AssociationSet>
+          <AssociationSet Name="fk_productingredients_product" Association="posModel.fk_productingredients_product">
+            <End Role="product" EntitySet="products" />
+            <End Role="productingredients" EntitySet="productingredients" />
+          </AssociationSet>
+          <AssociationSet Name="fk_rawstocklistchild_rawstocklistmaster1" Association="posModel.fk_rawstocklistchild_rawstocklistmaster1">
+            <End Role="rawstocklistmaster" EntitySet="rawstocklistmasters" />
+            <End Role="rawstocklistchild" EntitySet="rawstocklistchilds" />
+          </AssociationSet>
+          <AssociationSet Name="fk_rawstocklistchild_rawstockproduct1" Association="posModel.fk_rawstocklistchild_rawstockproduct1">
+            <End Role="rawstockproduct" EntitySet="rawstockproducts" />
+            <End Role="rawstocklistchild" EntitySet="rawstocklistchilds" />
+          </AssociationSet>
+          <AssociationSet Name="fk_securitygrouppermission_securitygroup1" Association="posModel.fk_securitygrouppermission_securitygroup1">
+            <End Role="securitygroup" EntitySet="securitygroups" />
+            <End Role="securitygrouppermission" EntitySet="securitygrouppermissions" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_securitygroup1" Association="posModel.fk_user_securitygroup1">
+            <End Role="securitygroup" EntitySet="securitygroups" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_staff1" Association="posModel.fk_user_staff1">
+            <End Role="staff" EntitySet="staffs" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="buildingname" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="houseno" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="street" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="locality" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="postaltown" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="country" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="postcode_id" Type="Int32" />
+          <NavigationProperty Name="postcode" Relationship="posModel.fk_address_postcode1" FromRole="address" ToRole="postcode" />
+          <NavigationProperty Name="companyinfoes" Relationship="posModel.fk_companyinfo_address1" FromRole="address" ToRole="companyinfo" />
+          <NavigationProperty Name="customers" Relationship="posModel.fk_customer_address1" FromRole="address" ToRole="customer" />
+          <NavigationProperty Name="staffs" Relationship="posModel.fk_staff_address1" FromRole="address" ToRole="staff" />
+        </EntityType>
+        <EntityType Name="companyinfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="fax" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="servicephone" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="website" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="vatregistrationnumber" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="address_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="address" Relationship="posModel.fk_companyinfo_address1" FromRole="companyinfo" ToRole="address" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="type" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="lastname" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="firstname" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="mobile" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="status" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="creditlimit" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="address_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="address" Relationship="posModel.fk_customer_address1" FromRole="customer" ToRole="address" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="staffs" Relationship="posModel.fk_staff_depertment1" FromRole="department" ToRole="staff" />
+        </EntityType>
+        <EntityType Name="menu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="position" Type="Int32" />
+          <Property Name="buttoncolor" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="buttontextcolor" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="products" Relationship="posModel.fk_product_menu1" FromRole="menu" ToRole="product" />
+        </EntityType>
+        <EntityType Name="orderchild">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="amount" Type="Decimal" />
+          <Property Name="producttype" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ordermaster_id" Type="Int32" Nullable="false" />
+          <Property Name="product_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ordermaster" Relationship="posModel.fk_orderchild_ordermaster1" FromRole="orderchild" ToRole="ordermaster" />
+          <NavigationProperty Name="product" Relationship="posModel.fk_orderchild_product1" FromRole="orderchild" ToRole="product" />
+        </EntityType>
+        <EntityType Name="ordermaster">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ticketno" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="orderdate" Type="DateTime" />
+          <Property Name="customercode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="paymentstatus" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="subtotal" Type="Decimal" />
+          <Property Name="discountamount" Type="Decimal" />
+          <Property Name="deliverycharge" Type="Decimal" />
+          <Property Name="grandtotal" Type="Decimal" />
+          <Property Name="server" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="paidamount" Type="Decimal" />
+          <Property Name="paytype" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="printreceiptcopies" Type="Int32" />
+          <Property Name="servicetype_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="orderchilds" Relationship="posModel.fk_orderchild_ordermaster1" FromRole="ordermaster" ToRole="orderchild" />
+          <NavigationProperty Name="servicetype" Relationship="posModel.fk_ordermaster_servicetype1" FromRole="ordermaster" ToRole="servicetype" />
+        </EntityType>
+        <EntityType Name="permission">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="securitygrouppermissions" Relationship="posModel.fk_securitygrouppermission_permissions1" FromRole="permissions" ToRole="securitygrouppermission" />
+        </EntityType>
+        <EntityType Name="postcode">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="addresses" Relationship="posModel.fk_address_postcode1" FromRole="postcode" ToRole="address" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="receiptdescription" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="status" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="prepproduct" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="preplocation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="buyingprice" Type="Decimal" />
+          <Property Name="dineinprice" Type="Decimal" />
+          <Property Name="collectionprice" Type="Decimal" />
+          <Property Name="waitingprice" Type="Decimal" />
+          <Property Name="deliveryprice" Type="Decimal" />
+          <Property Name="allprice" Type="Decimal" />
+          <Property Name="stockproduct" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="stockquantity" Type="Int32" />
+          <Property Name="discountable" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="popupmessage" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="lookupcode" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="receiptcopies" Type="Int32" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="productcategory_id" Type="Int32" Nullable="false" />
+          <Property Name="menu_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="menu" Relationship="posModel.fk_product_menu1" FromRole="product" ToRole="menu" />
+          <NavigationProperty Name="orderchilds" Relationship="posModel.fk_orderchild_product1" FromRole="product" ToRole="orderchild" />
+          <NavigationProperty Name="productcategory" Relationship="posModel.fk_product_productcategory1" FromRole="product" ToRole="productcategory" />
+          <NavigationProperty Name="productbutton" Relationship="posModel.fk_productbutton_product1" FromRole="product" ToRole="productbutton" />
+          <NavigationProperty Name="productingredients" Relationship="posModel.fk_productingredients_product" FromRole="product" ToRole="productingredients" />
+        </EntityType>
+        <EntityType Name="productbutton">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="Int32" Nullable="false" />
+          <Property Name="color" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="textcolor" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="fontsize" Type="Int32" />
+          <Property Name="textbold" Type="Boolean" />
+          <NavigationProperty Name="product" Relationship="posModel.fk_productbutton_product1" FromRole="productbutton" ToRole="product" />
+        </EntityType>
+        <EntityType Name="productcategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="categorytype" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="products" Relationship="posModel.fk_product_productcategory1" FromRole="productcategory" ToRole="product" />
+        </EntityType>
+        <EntityType Name="productingredient">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ingredient" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="chargeable" Type="Boolean" />
+          <Property Name="amount" Type="Decimal" />
+          <Property Name="product_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="product" Relationship="posModel.fk_productingredients_product" FromRole="productingredients" ToRole="product" />
+        </EntityType>
+        <EntityType Name="rawstocklistchild">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="amount" Type="Decimal" />
+          <Property Name="rawstocklistmaster_id" Type="Int32" Nullable="false" />
+          <Property Name="rawstockproduct_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="rawstocklistmaster" Relationship="posModel.fk_rawstocklistchild_rawstocklistmaster1" FromRole="rawstocklistchild" ToRole="rawstocklistmaster" />
+          <NavigationProperty Name="rawstockproduct" Relationship="posModel.fk_rawstocklistchild_rawstockproduct1" FromRole="rawstocklistchild" ToRole="rawstockproduct" />
+        </EntityType>
+        <EntityType Name="rawstocklistmaster">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="DateTime" />
+          <Property Name="total" Type="Decimal" />
+          <Property Name="comment" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="server" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="rawstocklistchilds" Relationship="posModel.fk_rawstocklistchild_rawstocklistmaster1" FromRole="rawstocklistmaster" ToRole="rawstocklistchild" />
+        </EntityType>
+        <EntityType Name="rawstockproduct">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="buyingprice" Type="Decimal" />
+          <Property Name="quantity" Type="Int32" />
+          <NavigationProperty Name="rawstocklistchilds" Relationship="posModel.fk_rawstocklistchild_rawstockproduct1" FromRole="rawstockproduct" ToRole="rawstocklistchild" />
+        </EntityType>
+        <EntityType Name="securitygroup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="securitygrouppermissions" Relationship="posModel.fk_securitygrouppermission_securitygroup1" FromRole="securitygroup" ToRole="securitygrouppermission" />
+          <NavigationProperty Name="users" Relationship="posModel.fk_user_securitygroup1" FromRole="securitygroup" ToRole="user" />
+        </EntityType>
+        <EntityType Name="securitygrouppermission">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="permissions_id" Type="Int32" Nullable="false" />
+          <Property Name="securitygroup_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="permission" Relationship="posModel.fk_securitygrouppermission_permissions1" FromRole="securitygrouppermission" ToRole="permissions" />
+          <NavigationProperty Name="securitygroup" Relationship="posModel.fk_securitygrouppermission_securitygroup1" FromRole="securitygrouppermission" ToRole="securitygroup" />
+        </EntityType>
+        <EntityType Name="servicetype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="servicetype1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ordermasters" Relationship="posModel.fk_ordermaster_servicetype1" FromRole="servicetype" ToRole="ordermaster" />
+        </EntityType>
+        <EntityType Name="staff">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="lastname" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="firstname" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="dateofbirth" Type="DateTime" />
+          <Property Name="designation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="mobile" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="hiredate" Type="DateTime" />
+          <Property Name="status" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="department_id" Type="Int32" Nullable="false" />
+          <Property Name="address_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="address" Relationship="posModel.fk_staff_address1" FromRole="staff" ToRole="address" />
+          <NavigationProperty Name="department" Relationship="posModel.fk_staff_depertment1" FromRole="staff" ToRole="department" />
+          <NavigationProperty Name="users" Relationship="posModel.fk_user_staff1" FromRole="staff" ToRole="user" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="status" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="securitygroup_id" Type="Int32" Nullable="false" />
+          <Property Name="staff_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="securitygroup" Relationship="posModel.fk_user_securitygroup1" FromRole="user" ToRole="securitygroup" />
+          <NavigationProperty Name="staff" Relationship="posModel.fk_user_staff1" FromRole="user" ToRole="staff" />
+        </EntityType>
+        <Association Name="fk_address_postcode1">
+          <End Role="postcode" Type="posModel.postcode" Multiplicity="0..1" />
+          <End Role="address" Type="posModel.address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="postcode">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="address">
+              <PropertyRef Name="postcode_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_companyinfo_address1">
+          <End Role="address" Type="posModel.address" Multiplicity="1" />
+          <End Role="companyinfo" Type="posModel.companyinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="address">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="companyinfo">
+              <PropertyRef Name="address_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_customer_address1">
+          <End Role="address" Type="posModel.address" Multiplicity="1" />
+          <End Role="customer" Type="posModel.customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="address">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="customer">
+              <PropertyRef Name="address_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_address1">
+          <End Role="address" Type="posModel.address" Multiplicity="1" />
+          <End Role="staff" Type="posModel.staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="address">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="staff">
+              <PropertyRef Name="address_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_depertment1">
+          <End Role="department" Type="posModel.department" Multiplicity="1" />
+          <End Role="staff" Type="posModel.staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="staff">
+              <PropertyRef Name="department_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_product_menu1">
+          <End Role="menu" Type="posModel.menu" Multiplicity="1" />
+          <End Role="product" Type="posModel.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="menu">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="menu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_orderchild_ordermaster1">
+          <End Role="ordermaster" Type="posModel.ordermaster" Multiplicity="1" />
+          <End Role="orderchild" Type="posModel.orderchild" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ordermaster">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="orderchild">
+              <PropertyRef Name="ordermaster_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_orderchild_product1">
+          <End Role="product" Type="posModel.product" Multiplicity="1" />
+          <End Role="orderchild" Type="posModel.orderchild" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="orderchild">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ordermaster_servicetype1">
+          <End Role="servicetype" Type="posModel.servicetype" Multiplicity="1" />
+          <End Role="ordermaster" Type="posModel.ordermaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="servicetype">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ordermaster">
+              <PropertyRef Name="servicetype_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_securitygrouppermission_permissions1">
+          <End Role="permissions" Type="posModel.permission" Multiplicity="1" />
+          <End Role="securitygrouppermission" Type="posModel.securitygrouppermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="permissions">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="securitygrouppermission">
+              <PropertyRef Name="permissions_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_product_productcategory1">
+          <End Role="productcategory" Type="posModel.productcategory" Multiplicity="1" />
+          <End Role="product" Type="posModel.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productcategory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="productcategory_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_productbutton_product1">
+          <End Role="product" Type="posModel.product" Multiplicity="1" />
+          <End Role="productbutton" Type="posModel.productbutton" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="productbutton">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_productingredients_product">
+          <End Role="product" Type="posModel.product" Multiplicity="1" />
+          <End Role="productingredients" Type="posModel.productingredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="productingredients">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_rawstocklistchild_rawstocklistmaster1">
+          <End Role="rawstocklistmaster" Type="posModel.rawstocklistmaster" Multiplicity="1" />
+          <End Role="rawstocklistchild" Type="posModel.rawstocklistchild" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rawstocklistmaster">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="rawstocklistchild">
+              <PropertyRef Name="rawstocklistmaster_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_rawstocklistchild_rawstockproduct1">
+          <End Role="rawstockproduct" Type="posModel.rawstockproduct" Multiplicity="1" />
+          <End Role="rawstocklistchild" Type="posModel.rawstocklistchild" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rawstockproduct">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="rawstocklistchild">
+              <PropertyRef Name="rawstockproduct_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_securitygrouppermission_securitygroup1">
+          <End Role="securitygroup" Type="posModel.securitygroup" Multiplicity="1" />
+          <End Role="securitygrouppermission" Type="posModel.securitygrouppermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="securitygroup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="securitygrouppermission">
+              <PropertyRef Name="securitygroup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_securitygroup1">
+          <End Role="securitygroup" Type="posModel.securitygroup" Multiplicity="1" />
+          <End Role="user" Type="posModel.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="securitygroup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="securitygroup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_staff1">
+          <End Role="staff" Type="posModel.staff" Multiplicity="1" />
+          <End Role="user" Type="posModel.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="staff">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="staff_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="posModelStoreContainer" CdmEntityContainer="POSDB">
+          <EntitySetMapping Name="addresses"><EntityTypeMapping TypeName="posModel.address"><MappingFragment StoreEntitySet="address">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="buildingname" ColumnName="buildingname" />
+            <ScalarProperty Name="houseno" ColumnName="houseno" />
+            <ScalarProperty Name="street" ColumnName="street" />
+            <ScalarProperty Name="locality" ColumnName="locality" />
+            <ScalarProperty Name="postaltown" ColumnName="postaltown" />
+            <ScalarProperty Name="country" ColumnName="country" />
+            <ScalarProperty Name="postcode_id" ColumnName="postcode_id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="companyinfoes"><EntityTypeMapping TypeName="posModel.companyinfo"><MappingFragment StoreEntitySet="companyinfo">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="phone" ColumnName="phone" />
+            <ScalarProperty Name="fax" ColumnName="fax" />
+            <ScalarProperty Name="servicephone" ColumnName="servicephone" />
+            <ScalarProperty Name="email" ColumnName="email" />
+            <ScalarProperty Name="website" ColumnName="website" />
+            <ScalarProperty Name="vatregistrationnumber" ColumnName="vatregistrationnumber" />
+            <ScalarProperty Name="address_id" ColumnName="address_id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="customers"><EntityTypeMapping TypeName="posModel.customer"><MappingFragment StoreEntitySet="customer">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="code" ColumnName="code" />
+            <ScalarProperty Name="type" ColumnName="type" />
+            <ScalarProperty Name="lastname" ColumnName="lastname" />
+            <ScalarProperty Name="firstname" ColumnName="firstname" />
+            <ScalarProperty Name="phone" ColumnName="phone" />
+            <ScalarProperty Name="mobile" ColumnName="mobile" />
+            <ScalarProperty Name="email" ColumnName="email" />
+            <ScalarProperty Name="status" ColumnName="status" />
+            <ScalarProperty Name="creditlimit" ColumnName="creditlimit" />
+            <ScalarProperty Name="image" ColumnName="image" />
+            <ScalarProperty Name="address_id" ColumnName="address_id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="departments"><EntityTypeMapping TypeName="posModel.department"><MappingFragment StoreEntitySet="department">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="description" ColumnName="description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="menus"><EntityTypeMapping TypeName="posModel.menu"><MappingFragment StoreEntitySet="menu">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="description" ColumnName="description" />
+            <ScalarProperty Name="position" ColumnName="position" />
+            <ScalarProperty Name="buttoncolor" ColumnName="buttoncolor" />
+            <ScalarProperty Name="buttontextcolor" ColumnName="buttontextcolor" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="orderchilds"><EntityTypeMapping TypeName="posModel.orderchild"><MappingFragment StoreEntitySet="orderchild">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="quantity" ColumnName="quantity" />
+            <ScalarProperty Name="amount" ColumnName="amount" />
+            <ScalarProperty Name="producttype" ColumnName="producttype" />
+            <ScalarProperty Name="ordermaster_id" ColumnName="ordermaster_id" />
+            <ScalarProperty Name="product_id" ColumnName="product_id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ordermasters"><EntityTypeMapping TypeName="posModel.ordermaster"><MappingFragment StoreEntitySet="ordermaster">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ticketno" ColumnName="ticketno" />
+            <ScalarProperty Name="orderdate" ColumnName="orderdate" />
+            <ScalarProperty Name="customercode" ColumnName="customercode" />
+            <ScalarProperty Name="paymentstatus" ColumnName="paymentstatus" />
+            <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+            <ScalarProperty Name="discountamount" ColumnName="discountamount" />
+            <ScalarProperty Name="deliverycharge" ColumnName="deliverycharge" />
+            <ScalarProperty Name="grandtotal" ColumnName="grandtotal" />
+            <ScalarProperty Name="server" ColumnName="server" />
+            <ScalarProperty Name="paidamount" ColumnName="paidamount" />
+            <ScalarProperty Name="paytype" ColumnName="paytype" />
+            <ScalarProperty Name="printreceiptcopies" ColumnName="printreceiptcopies" />
+            <ScalarProperty Name="servicetype_id" ColumnName="servicetype_id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="permissions"><EntityTypeMapping TypeName="posModel.permission"><MappingFragment StoreEntitySet="permissions">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="code" ColumnName="code" />
+            <ScalarProperty Name="name" ColumnName="name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="postcodes"><EntityTypeMapping TypeName="posModel.postcode"><MappingFragment StoreEntitySet="postcode">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="code" ColumnName="code" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="products"><EntityTypeMapping TypeName="posModel.product"><MappingFragment StoreEntitySet="product">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="code" ColumnName="code" />
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="receiptdescription" ColumnName="receiptdescription" />
+            <ScalarProperty Name="status" ColumnName="status" />
+            <ScalarProperty Name="prepproduct" ColumnName="prepproduct" />
+            <ScalarProperty Name="preplocation" ColumnName="preplocation" />
+            <ScalarProperty Name="buyingprice" ColumnName="buyingprice" />
+            <ScalarProperty Name="dineinprice" ColumnName="dineinprice" />
+            <ScalarProperty Name="collectionprice" ColumnName="collectionprice" />
+            <ScalarProperty Name="waitingprice" ColumnName="waitingprice" />
+            <ScalarProperty Name="deliveryprice" ColumnName="deliveryprice" />
+            <ScalarProperty Name="allprice" ColumnName="allprice" />
+            <ScalarProperty Name="stockproduct" ColumnName="stockproduct" />
+            <ScalarProperty Name="stockquantity" ColumnName="stockquantity" />
+            <ScalarProperty Name="discountable" ColumnName="discountable" />
+            <ScalarProperty Name="popupmessage" ColumnName="popupmessage" />
+            <ScalarProperty Name="lookupcode" ColumnName="lookupcode" />
+            <ScalarProperty Name="receiptcopies" ColumnName="receiptcopies" />
+            <ScalarProperty Name="image" ColumnName="image" />
+            <ScalarProperty Name="productcategory_id" ColumnName="productcategory_id" />
+            <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="productbuttons"><EntityTypeMapping TypeName="posModel.productbutton"><MappingFragment StoreEntitySet="productbutton">
+            <ScalarProperty Name="product_id" ColumnName="product_id" />
+            <ScalarProperty Name="color" ColumnName="color" />
+            <ScalarProperty Name="textcolor" ColumnName="textcolor" />
+            <ScalarProperty Name="fontsize" ColumnName="fontsize" />
+            <ScalarProperty Name="textbold" ColumnName="textbold" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="productcategories"><EntityTypeMapping TypeName="posModel.productcategory"><MappingFragment StoreEntitySet="productcategory">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="categorytype" ColumnName="categorytype" />
+            <ScalarProperty Name="description" ColumnName="description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="productingredients"><EntityTypeMapping TypeName="posModel.productingredient"><MappingFragment StoreEntitySet="productingredients">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ingredient" ColumnName="ingredient" />
+            <ScalarProperty Name="chargeable" ColumnName="chargeable" />
+            <ScalarProperty Name="amount" ColumnName="amount" />
+            <ScalarProperty Name="product_id" ColumnName="product_id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="rawstocklistchilds"><EntityTypeMapping TypeName="posModel.rawstocklistchild"><MappingFragment StoreEntitySet="rawstocklistchild">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="quantity" ColumnName="quantity" />
+            <ScalarProperty Name="amount" ColumnName="amount" />
+            <ScalarProperty Name="rawstocklistmaster_id" ColumnName="rawstocklistmaster_id" />
+            <ScalarProperty Name="rawstockproduct_id" ColumnName="rawstockproduct_id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="rawstocklistmasters"><EntityTypeMapping TypeName="posModel.rawstocklistmaster"><MappingFragment StoreEntitySet="rawstocklistmaster">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="date" ColumnName="date" />
+            <ScalarProperty Name="total" ColumnName="total" />
+            <ScalarProperty Name="comment" ColumnName="comment" />
+            <ScalarProperty Name="server" ColumnName="server" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="rawstockproducts"><EntityTypeMapping TypeName="posModel.rawstockproduct"><MappingFragment StoreEntitySet="rawstockproduct">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="code" ColumnName="code" />
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="buyingprice" ColumnName="buyingprice" />
+            <ScalarProperty Name="quantity" ColumnName="quantity" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="securitygroups"><EntityTypeMapping TypeName="posModel.securitygroup"><MappingFragment StoreEntitySet="securitygroup">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="description" ColumnName="description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="securitygrouppermissions"><EntityTypeMapping TypeName="posModel.securitygrouppermission"><MappingFragment StoreEntitySet="securitygrouppermission">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="permissions_id" ColumnName="permissions_id" />
+            <ScalarProperty Name="securitygroup_id" ColumnName="securitygroup_id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="servicetypes"><EntityTypeMapping TypeName="posModel.servicetype"><MappingFragment StoreEntitySet="servicetype">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="servicetype1" ColumnName="servicetype" />
+            <ScalarProperty Name="description" ColumnName="description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="staffs"><EntityTypeMapping TypeName="posModel.staff"><MappingFragment StoreEntitySet="staff">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="code" ColumnName="code" />
+            <ScalarProperty Name="lastname" ColumnName="lastname" />
+            <ScalarProperty Name="firstname" ColumnName="firstname" />
+            <ScalarProperty Name="dateofbirth" ColumnName="dateofbirth" />
+            <ScalarProperty Name="designation" ColumnName="designation" />
+            <ScalarProperty Name="phone" ColumnName="phone" />
+            <ScalarProperty Name="mobile" ColumnName="mobile" />
+            <ScalarProperty Name="email" ColumnName="email" />
+            <ScalarProperty Name="hiredate" ColumnName="hiredate" />
+            <ScalarProperty Name="status" ColumnName="status" />
+            <ScalarProperty Name="image" ColumnName="image" />
+            <ScalarProperty Name="department_id" ColumnName="department_id" />
+            <ScalarProperty Name="address_id" ColumnName="address_id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="users"><EntityTypeMapping TypeName="posModel.user"><MappingFragment StoreEntitySet="user">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="userid" ColumnName="userid" />
+            <ScalarProperty Name="password" ColumnName="password" />
+            <ScalarProperty Name="status" ColumnName="status" />
+            <ScalarProperty Name="securitygroup_id" ColumnName="securitygroup_id" />
+            <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="posModel.address" Width="1.5" PointX="10" PointY="7" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.companyinfo" Width="1.5" PointX="12.25" PointY="5" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.customer" Width="1.5" PointX="12.25" PointY="8.75" Height="3.5186979166666656" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.department" Width="1.5" PointX="13" PointY="1.75" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.menu" Width="1.5" PointX="0.75" PointY="5.375" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.orderchild" Width="1.5" PointX="5.25" PointY="3.25" Height="2.5571907552083322" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.ordermaster" Width="1.5" PointX="3" PointY="10.5" Height="4.0956022135416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.permission" Width="1.5" PointX="15.25" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.postcode" Width="1.5" PointX="7.75" PointY="7.875" Height="1.5956835937499987" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.product" Width="1.5" PointX="3" PointY="3.375" Height="6.2109179687500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.productbutton" Width="1.5" PointX="5.25" PointY="7.25" Height="2.172587890625004" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.productcategory" Width="1.5" PointX="0.75" PointY="2.625" Height="1.7879850260416745" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.productingredient" Width="1.5" PointX="5.25" PointY="10.25" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.rawstocklistchild" Width="1.5" PointX="8" PointY="14" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.rawstocklistmaster" Width="1.5" PointX="5.75" PointY="14.125" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.rawstockproduct" Width="1.5" PointX="5.75" PointY="17.125" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.securitygroup" Width="1.5" PointX="15.25" PointY="3.625" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.securitygrouppermission" Width="1.5" PointX="17.5" PointY="3.625" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.servicetype" Width="1.5" PointX="0.75" PointY="11.625" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.staff" Width="1.5" PointX="15.25" PointY="6.5" Height="4.2879036458333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="posModel.user" Width="1.5" PointX="17.5" PointY="7.375" Height="2.5571907552083388" IsExpanded="true" />
+        <AssociationConnector Association="posModel.fk_address_postcode1" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.25" PointY="8.672841796875" />
+          <ConnectorPoint PointX="10" PointY="8.672841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_companyinfo_address1" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.5" PointY="7.4708968098958328" />
+          <ConnectorPoint PointX="12.25" PointY="7.4708968098958328" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_customer_address1" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.5" PointY="9.5381982421875" />
+          <ConnectorPoint PointX="12.25" PointY="9.5381982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_staff_address1" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.5" PointY="8.3458968098958337" />
+          <ConnectorPoint PointX="15.25" PointY="8.3458968098958337" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_staff_depertment1" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.15625" PointY="3.5379850260416656" />
+          <ConnectorPoint PointX="14.15625" PointY="8.1438427148437569" />
+          <ConnectorPoint PointX="15.25" PointY="8.1438427148437569" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_product_menu1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.5574446614583328" />
+          <ConnectorPoint PointX="3" PointY="6.5574446614583328" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_orderchild_ordermaster1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="10.501152846153847" />
+          <ConnectorPoint PointX="4.875" PointY="10.126152846153847" />
+          <ConnectorPoint PointX="4.875" PointY="4.5285953776041659" />
+          <ConnectorPoint PointX="5.25" PointY="4.5285953776041659" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_orderchild_product1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="5.2303930664062488" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="5.2303930664062479" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="5.2303930664062488" />
+          <ConnectorPoint PointX="5.25" PointY="5.2303930664062488" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_ordermaster_servicetype1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="12.518992513020834" />
+          <ConnectorPoint PointX="3" PointY="12.518992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_securitygrouppermission_permissions1" ManuallyRouted="false">
+          <ConnectorPoint PointX="16.75" PointY="1.6439925130208337" />
+          <ConnectorPoint PointX="18.25" PointY="1.6439925130208337" />
+          <ConnectorPoint PointX="18.25" PointY="3.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_product_productcategory1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="3.8939925130208373" />
+          <ConnectorPoint PointX="3" PointY="3.8939925130208373" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_productbutton_product1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="8.3362939453125016" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="8.3362939453125016" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="8.3362939453125016" />
+          <ConnectorPoint PointX="5.25" PointY="8.3362939453125016" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_productingredients_product" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="9.5236092764423113" />
+          <ConnectorPoint PointX="4.8160744349011217" PointY="9.8396837113434312" />
+          <ConnectorPoint PointX="4.9339255650988791" PointY="9.95753484154119" />
+          <ConnectorPoint PointX="5.1875" PointY="10.211109276442311" />
+          <ConnectorPoint PointX="5.1875" PointY="10.186347153846153" />
+          <ConnectorPoint PointX="5.2511528461538459" PointY="10.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_rawstocklistchild_rawstocklistmaster1" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.25" PointY="15.211293945312502" />
+          <ConnectorPoint PointX="8" PointY="15.211293945312502" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_rawstocklistchild_rawstockproduct1" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.25" PointY="18.2112939453125" />
+          <ConnectorPoint PointX="8.75" PointY="18.2112939453125" />
+          <ConnectorPoint PointX="8.75" PointY="16.364889322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_securitygrouppermission_securitygroup1" ManuallyRouted="false">
+          <ConnectorPoint PointX="16.75" PointY="4.6151432291666694" />
+          <ConnectorPoint PointX="17.5" PointY="4.6151432291666694" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_user_securitygroup1" ManuallyRouted="false">
+          <ConnectorPoint PointX="16.75" PointY="5.6041316121794926" />
+          <ConnectorPoint PointX="17.125" PointY="5.9791316121794935" />
+          <ConnectorPoint PointX="17.125" PointY="8.65359537760417" />
+          <ConnectorPoint PointX="17.5" PointY="8.65359537760417" />
+        </AssociationConnector>
+        <AssociationConnector Association="posModel.fk_user_staff1" ManuallyRouted="false">
+          <ConnectorPoint PointX="16.75" PointY="7.9517976888020847" />
+          <ConnectorPoint PointX="17.041666666666668" PointY="7.9517976888020838" />
+          <ConnectorPoint PointX="17.208333333333332" PointY="7.9517976888020847" />
+          <ConnectorPoint PointX="17.5" PointY="7.9517976888020847" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

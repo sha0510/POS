@@ -12,17 +12,16 @@ namespace DAL.Datamodel
     using System;
     using System.Collections.Generic;
     
-    public partial class servicetype
+    public partial class logininfo
     {
-        public servicetype()
-        {
-            this.ordermasters = new HashSet<ordermaster>();
-        }
+        public Nullable<System.DateTime> lastlogindate { get; set; }
+        public Nullable<bool> lockedout { get; set; }
+        public Nullable<int> cumulativefailures { get; set; }
+        public Nullable<System.DateTime> registerdate { get; set; }
+        public Nullable<System.DateTime> updatedate { get; set; }
+        public int user_id { get; set; }
+        public string user_userid { get; set; }
     
-        public int id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-    
-        public virtual ICollection<ordermaster> ordermasters { get; set; }
+        public virtual user loginuser { get; set; }
     }
 }

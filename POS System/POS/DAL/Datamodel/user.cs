@@ -21,6 +21,7 @@ namespace DAL.Datamodel
         public int securitygroup_id { get; set; }
         public int staff_id { get; set; }
     
+        public virtual logininfo logininfo { get; set; }
         public virtual securitygroup securitygroup { get; set; }
         public virtual staff staff { get; set; }
     }

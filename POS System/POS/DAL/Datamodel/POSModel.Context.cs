@@ -29,6 +29,7 @@ namespace DAL.Datamodel
         public DbSet<companyinfo> companyinfoes { get; set; }
         public DbSet<customer> customers { get; set; }
         public DbSet<department> departments { get; set; }
+        public DbSet<logininfo> logininfoes { get; set; }
         public DbSet<menu> menus { get; set; }
         public DbSet<orderchild> orderchilds { get; set; }
         public DbSet<ordermaster> ordermasters { get; set; }

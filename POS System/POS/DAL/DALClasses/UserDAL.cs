@@ -33,6 +33,13 @@ namespace DAL.DALClasses
             return selectedItem;
         }
 
+        public user findByIdAndPassword(user findItem)
+        {
+            user selectedItem = db.users.Single(item => item.userid == findItem.userid && item.password == findItem.password);
+
+            return selectedItem;
+        }
+
         public List<user> selectAll()
         {
             return db.users.ToList();

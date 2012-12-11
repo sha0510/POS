@@ -59,18 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Datamodel\address.cs">
-      <DependentUpon>POSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datamodel\companyinfo.cs">
-      <DependentUpon>POSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Datamodel\customer.cs">
-      <DependentUpon>POSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DALClasses\AddressDAL.cs" />
     <Compile Include="DALClasses\CompanyinfoDAL.cs" />
     <Compile Include="DALClasses\DepartmentDAL.cs" />
+    <Compile Include="DALClasses\LoginInfoDAL.cs" />
     <Compile Include="DALClasses\MenuDAL.cs" />
     <Compile Include="DALClasses\PostcodeDAL.cs" />
     <Compile Include="DALClasses\ProductCategoryDAL.cs" />
@@ -84,7 +76,19 @@
     <Compile Include="DALClasses\ProductDAL.cs" />
     <Compile Include="DALClasses\RawStockProductDAL.cs" />
     <Compile Include="DALClasses\ProductIngredientDAL.cs" />
+    <Compile Include="Datamodel\address.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datamodel\companyinfo.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datamodel\customer.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Datamodel\department.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datamodel\logininfo.cs">
       <DependentUpon>POSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Datamodel\menu.cs">
@@ -129,7 +133,6 @@
     <Compile Include="Datamodel\productingredient.cs">
       <DependentUpon>POSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Datamodel\rawstocklistchild.cs">
       <DependentUpon>POSModel.tt</DependentUpon>
     </Compile>
@@ -154,6 +157,8 @@
     <Compile Include="Datamodel\user.cs">
       <DependentUpon>POSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\LoginStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -163,6 +168,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>POSModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="App.Config" />
     <None Include="Datamodel\POSModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -173,7 +180,6 @@
       <LastGenOutput>POSModel.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

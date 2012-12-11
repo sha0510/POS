@@ -4,98 +4,103 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="posModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="posModelStoreContainer">
-          <EntitySet Name="address" EntityType="posModel.Store.address" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="companyinfo" EntityType="posModel.Store.companyinfo" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="customer" EntityType="posModel.Store.customer" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="department" EntityType="posModel.Store.department" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="menu" EntityType="posModel.Store.menu" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="orderchild" EntityType="posModel.Store.orderchild" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="ordermaster" EntityType="posModel.Store.ordermaster" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="permissions" EntityType="posModel.Store.permissions" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="postcode" EntityType="posModel.Store.postcode" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="product" EntityType="posModel.Store.product" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="productbutton" EntityType="posModel.Store.productbutton" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="productcategory" EntityType="posModel.Store.productcategory" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="productingredients" EntityType="posModel.Store.productingredients" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="rawstocklistchild" EntityType="posModel.Store.rawstocklistchild" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="rawstocklistmaster" EntityType="posModel.Store.rawstocklistmaster" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="rawstockproduct" EntityType="posModel.Store.rawstockproduct" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="securitygroup" EntityType="posModel.Store.securitygroup" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="securitygrouppermission" EntityType="posModel.Store.securitygrouppermission" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="servicetype" EntityType="posModel.Store.servicetype" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="staff" EntityType="posModel.Store.staff" store:Type="Tables" Schema="posdb" />
-          <EntitySet Name="user" EntityType="posModel.Store.user" store:Type="Tables" Schema="posdb" />
-          <AssociationSet Name="fk_address_postcode1" Association="posModel.Store.fk_address_postcode1">
+      <Schema Namespace="posdbModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="posdbModelStoreContainer">
+          <EntitySet Name="address" EntityType="posdbModel.Store.address" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="companyinfo" EntityType="posdbModel.Store.companyinfo" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="customer" EntityType="posdbModel.Store.customer" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="department" EntityType="posdbModel.Store.department" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="logininfo" EntityType="posdbModel.Store.logininfo" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="menu" EntityType="posdbModel.Store.menu" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="orderchild" EntityType="posdbModel.Store.orderchild" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="ordermaster" EntityType="posdbModel.Store.ordermaster" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="permissions" EntityType="posdbModel.Store.permissions" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="postcode" EntityType="posdbModel.Store.postcode" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="product" EntityType="posdbModel.Store.product" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="productbutton" EntityType="posdbModel.Store.productbutton" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="productcategory" EntityType="posdbModel.Store.productcategory" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="productingredients" EntityType="posdbModel.Store.productingredients" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="rawstocklistchild" EntityType="posdbModel.Store.rawstocklistchild" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="rawstocklistmaster" EntityType="posdbModel.Store.rawstocklistmaster" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="rawstockproduct" EntityType="posdbModel.Store.rawstockproduct" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="securitygroup" EntityType="posdbModel.Store.securitygroup" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="securitygrouppermission" EntityType="posdbModel.Store.securitygrouppermission" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="servicetype" EntityType="posdbModel.Store.servicetype" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="staff" EntityType="posdbModel.Store.staff" store:Type="Tables" Schema="posdb" />
+          <EntitySet Name="user" EntityType="posdbModel.Store.user" store:Type="Tables" Schema="posdb" />
+          <AssociationSet Name="fk_address_postcode1" Association="posdbModel.Store.fk_address_postcode1">
             <End Role="postcode" EntitySet="postcode" />
             <End Role="address" EntitySet="address" />
           </AssociationSet>
-          <AssociationSet Name="fk_companyinfo_address1" Association="posModel.Store.fk_companyinfo_address1">
+          <AssociationSet Name="fk_companyinfo_address1" Association="posdbModel.Store.fk_companyinfo_address1">
             <End Role="address" EntitySet="address" />
             <End Role="companyinfo" EntitySet="companyinfo" />
           </AssociationSet>
-          <AssociationSet Name="fk_customer_address1" Association="posModel.Store.fk_customer_address1">
+          <AssociationSet Name="fk_customer_address1" Association="posdbModel.Store.fk_customer_address1">
             <End Role="address" EntitySet="address" />
             <End Role="customer" EntitySet="customer" />
           </AssociationSet>
-          <AssociationSet Name="fk_orderchild_ordermaster1" Association="posModel.Store.fk_orderchild_ordermaster1">
+          <AssociationSet Name="fk_logininfo_user1" Association="posdbModel.Store.fk_logininfo_user1">
+            <End Role="user" EntitySet="user" />
+            <End Role="logininfo" EntitySet="logininfo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_orderchild_ordermaster1" Association="posdbModel.Store.fk_orderchild_ordermaster1">
             <End Role="ordermaster" EntitySet="ordermaster" />
             <End Role="orderchild" EntitySet="orderchild" />
           </AssociationSet>
-          <AssociationSet Name="fk_orderchild_product1" Association="posModel.Store.fk_orderchild_product1">
+          <AssociationSet Name="fk_orderchild_product1" Association="posdbModel.Store.fk_orderchild_product1">
             <End Role="product" EntitySet="product" />
             <End Role="orderchild" EntitySet="orderchild" />
           </AssociationSet>
-          <AssociationSet Name="fk_ordermaster_servicetype1" Association="posModel.Store.fk_ordermaster_servicetype1">
+          <AssociationSet Name="fk_ordermaster_servicetype1" Association="posdbModel.Store.fk_ordermaster_servicetype1">
             <End Role="servicetype" EntitySet="servicetype" />
             <End Role="ordermaster" EntitySet="ordermaster" />
           </AssociationSet>
-          <AssociationSet Name="fk_product_menu1" Association="posModel.Store.fk_product_menu1">
+          <AssociationSet Name="fk_product_menu1" Association="posdbModel.Store.fk_product_menu1">
             <End Role="menu" EntitySet="menu" />
             <End Role="product" EntitySet="product" />
           </AssociationSet>
-          <AssociationSet Name="fk_product_productcategory1" Association="posModel.Store.fk_product_productcategory1">
+          <AssociationSet Name="fk_product_productcategory1" Association="posdbModel.Store.fk_product_productcategory1">
             <End Role="productcategory" EntitySet="productcategory" />
             <End Role="product" EntitySet="product" />
           </AssociationSet>
-          <AssociationSet Name="fk_productbutton_product1" Association="posModel.Store.fk_productbutton_product1">
+          <AssociationSet Name="fk_productbutton_product1" Association="posdbModel.Store.fk_productbutton_product1">
             <End Role="product" EntitySet="product" />
             <End Role="productbutton" EntitySet="productbutton" />
           </AssociationSet>
-          <AssociationSet Name="fk_productingredients_product" Association="posModel.Store.fk_productingredients_product">
+          <AssociationSet Name="fk_productingredients_product" Association="posdbModel.Store.fk_productingredients_product">
             <End Role="product" EntitySet="product" />
             <End Role="productingredients" EntitySet="productingredients" />
           </AssociationSet>
-          <AssociationSet Name="fk_rawstocklistchild_rawstocklistmaster1" Association="posModel.Store.fk_rawstocklistchild_rawstocklistmaster1">
+          <AssociationSet Name="fk_rawstocklistchild_rawstocklistmaster1" Association="posdbModel.Store.fk_rawstocklistchild_rawstocklistmaster1">
             <End Role="rawstocklistmaster" EntitySet="rawstocklistmaster" />
             <End Role="rawstocklistchild" EntitySet="rawstocklistchild" />
           </AssociationSet>
-          <AssociationSet Name="fk_rawstocklistchild_rawstockproduct1" Association="posModel.Store.fk_rawstocklistchild_rawstockproduct1">
+          <AssociationSet Name="fk_rawstocklistchild_rawstockproduct1" Association="posdbModel.Store.fk_rawstocklistchild_rawstockproduct1">
             <End Role="rawstockproduct" EntitySet="rawstockproduct" />
             <End Role="rawstocklistchild" EntitySet="rawstocklistchild" />
           </AssociationSet>
-          <AssociationSet Name="fk_securitygrouppermission_permissions1" Association="posModel.Store.fk_securitygrouppermission_permissions1">
+          <AssociationSet Name="fk_securitygrouppermission_permissions1" Association="posdbModel.Store.fk_securitygrouppermission_permissions1">
             <End Role="permissions" EntitySet="permissions" />
             <End Role="securitygrouppermission" EntitySet="securitygrouppermission" />
           </AssociationSet>
-          <AssociationSet Name="fk_securitygrouppermission_securitygroup1" Association="posModel.Store.fk_securitygrouppermission_securitygroup1">
+          <AssociationSet Name="fk_securitygrouppermission_securitygroup1" Association="posdbModel.Store.fk_securitygrouppermission_securitygroup1">
             <End Role="securitygroup" EntitySet="securitygroup" />
             <End Role="securitygrouppermission" EntitySet="securitygrouppermission" />
           </AssociationSet>
-          <AssociationSet Name="fk_staff_address1" Association="posModel.Store.fk_staff_address1">
+          <AssociationSet Name="fk_staff_address1" Association="posdbModel.Store.fk_staff_address1">
             <End Role="address" EntitySet="address" />
             <End Role="staff" EntitySet="staff" />
           </AssociationSet>
-          <AssociationSet Name="fk_staff_depertment1" Association="posModel.Store.fk_staff_depertment1">
+          <AssociationSet Name="fk_staff_depertment1" Association="posdbModel.Store.fk_staff_depertment1">
             <End Role="department" EntitySet="department" />
             <End Role="staff" EntitySet="staff" />
           </AssociationSet>
-          <AssociationSet Name="fk_user_securitygroup1" Association="posModel.Store.fk_user_securitygroup1">
+          <AssociationSet Name="fk_user_securitygroup1" Association="posdbModel.Store.fk_user_securitygroup1">
             <End Role="securitygroup" EntitySet="securitygroup" />
             <End Role="user" EntitySet="user" />
           </AssociationSet>
-          <AssociationSet Name="fk_user_staff1" Association="posModel.Store.fk_user_staff1">
+          <AssociationSet Name="fk_user_staff1" Association="posdbModel.Store.fk_user_staff1">
             <End Role="staff" EntitySet="staff" />
             <End Role="user" EntitySet="user" />
           </AssociationSet>
@@ -151,6 +156,19 @@
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="varchar" MaxLength="100" />
           <Property Name="description" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="logininfo">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="user_userid" />
+          </Key>
+          <Property Name="lastlogindate" Type="datetime" />
+          <Property Name="lockedout" Type="bool" />
+          <Property Name="cumulativefailures" Type="int" />
+          <Property Name="registerdate" Type="datetime" />
+          <Property Name="updatedate" Type="datetime" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="user_userid" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <EntityType Name="menu">
           <Key>
@@ -314,7 +332,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="servicetype" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
           <Property Name="description" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="staff">
@@ -339,17 +357,18 @@
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="userid" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="userid" Type="varchar" MaxLength="50" />
-          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="userid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="100" />
           <Property Name="status" Type="varchar" MaxLength="15" />
           <Property Name="securitygroup_id" Type="int" Nullable="false" />
           <Property Name="staff_id" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="fk_address_postcode1">
-          <End Role="postcode" Type="posModel.Store.postcode" Multiplicity="0..1" />
-          <End Role="address" Type="posModel.Store.address" Multiplicity="*" />
+          <End Role="postcode" Type="posdbModel.Store.postcode" Multiplicity="0..1" />
+          <End Role="address" Type="posdbModel.Store.address" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="postcode">
               <PropertyRef Name="id" />
@@ -360,8 +379,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_companyinfo_address1">
-          <End Role="address" Type="posModel.Store.address" Multiplicity="1" />
-          <End Role="companyinfo" Type="posModel.Store.companyinfo" Multiplicity="*" />
+          <End Role="address" Type="posdbModel.Store.address" Multiplicity="1" />
+          <End Role="companyinfo" Type="posdbModel.Store.companyinfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="address">
               <PropertyRef Name="id" />
@@ -372,8 +391,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_customer_address1">
-          <End Role="address" Type="posModel.Store.address" Multiplicity="1" />
-          <End Role="customer" Type="posModel.Store.customer" Multiplicity="*" />
+          <End Role="address" Type="posdbModel.Store.address" Multiplicity="1" />
+          <End Role="customer" Type="posdbModel.Store.customer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="address">
               <PropertyRef Name="id" />
@@ -383,9 +402,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_logininfo_user1">
+          <End Role="user" Type="posdbModel.Store.user" Multiplicity="1" />
+          <End Role="logininfo" Type="posdbModel.Store.logininfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+              <PropertyRef Name="userid" />
+            </Principal>
+            <Dependent Role="logininfo">
+              <PropertyRef Name="user_id" />
+              <PropertyRef Name="user_userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_orderchild_ordermaster1">
-          <End Role="ordermaster" Type="posModel.Store.ordermaster" Multiplicity="1" />
-          <End Role="orderchild" Type="posModel.Store.orderchild" Multiplicity="*" />
+          <End Role="ordermaster" Type="posdbModel.Store.ordermaster" Multiplicity="1" />
+          <End Role="orderchild" Type="posdbModel.Store.orderchild" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ordermaster">
               <PropertyRef Name="id" />
@@ -396,8 +429,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_orderchild_product1">
-          <End Role="product" Type="posModel.Store.product" Multiplicity="1" />
-          <End Role="orderchild" Type="posModel.Store.orderchild" Multiplicity="*" />
+          <End Role="product" Type="posdbModel.Store.product" Multiplicity="1" />
+          <End Role="orderchild" Type="posdbModel.Store.orderchild" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="product">
               <PropertyRef Name="id" />
@@ -408,8 +441,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_ordermaster_servicetype1">
-          <End Role="servicetype" Type="posModel.Store.servicetype" Multiplicity="1" />
-          <End Role="ordermaster" Type="posModel.Store.ordermaster" Multiplicity="*" />
+          <End Role="servicetype" Type="posdbModel.Store.servicetype" Multiplicity="1" />
+          <End Role="ordermaster" Type="posdbModel.Store.ordermaster" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="servicetype">
               <PropertyRef Name="id" />
@@ -420,8 +453,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_product_menu1">
-          <End Role="menu" Type="posModel.Store.menu" Multiplicity="1" />
-          <End Role="product" Type="posModel.Store.product" Multiplicity="*" />
+          <End Role="menu" Type="posdbModel.Store.menu" Multiplicity="1" />
+          <End Role="product" Type="posdbModel.Store.product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="menu">
               <PropertyRef Name="id" />
@@ -432,8 +465,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_product_productcategory1">
-          <End Role="productcategory" Type="posModel.Store.productcategory" Multiplicity="1" />
-          <End Role="product" Type="posModel.Store.product" Multiplicity="*" />
+          <End Role="productcategory" Type="posdbModel.Store.productcategory" Multiplicity="1" />
+          <End Role="product" Type="posdbModel.Store.product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="productcategory">
               <PropertyRef Name="id" />
@@ -444,8 +477,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_productbutton_product1">
-          <End Role="product" Type="posModel.Store.product" Multiplicity="1" />
-          <End Role="productbutton" Type="posModel.Store.productbutton" Multiplicity="0..1" />
+          <End Role="product" Type="posdbModel.Store.product" Multiplicity="1" />
+          <End Role="productbutton" Type="posdbModel.Store.productbutton" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="product">
               <PropertyRef Name="id" />
@@ -456,8 +489,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_productingredients_product">
-          <End Role="product" Type="posModel.Store.product" Multiplicity="1" />
-          <End Role="productingredients" Type="posModel.Store.productingredients" Multiplicity="*" />
+          <End Role="product" Type="posdbModel.Store.product" Multiplicity="1" />
+          <End Role="productingredients" Type="posdbModel.Store.productingredients" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="product">
               <PropertyRef Name="id" />
@@ -468,8 +501,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_rawstocklistchild_rawstocklistmaster1">
-          <End Role="rawstocklistmaster" Type="posModel.Store.rawstocklistmaster" Multiplicity="1" />
-          <End Role="rawstocklistchild" Type="posModel.Store.rawstocklistchild" Multiplicity="*" />
+          <End Role="rawstocklistmaster" Type="posdbModel.Store.rawstocklistmaster" Multiplicity="1" />
+          <End Role="rawstocklistchild" Type="posdbModel.Store.rawstocklistchild" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="rawstocklistmaster">
               <PropertyRef Name="id" />
@@ -480,8 +513,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_rawstocklistchild_rawstockproduct1">
-          <End Role="rawstockproduct" Type="posModel.Store.rawstockproduct" Multiplicity="1" />
-          <End Role="rawstocklistchild" Type="posModel.Store.rawstocklistchild" Multiplicity="*" />
+          <End Role="rawstockproduct" Type="posdbModel.Store.rawstockproduct" Multiplicity="1" />
+          <End Role="rawstocklistchild" Type="posdbModel.Store.rawstocklistchild" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="rawstockproduct">
               <PropertyRef Name="id" />
@@ -492,8 +525,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_securitygrouppermission_permissions1">
-          <End Role="permissions" Type="posModel.Store.permissions" Multiplicity="1" />
-          <End Role="securitygrouppermission" Type="posModel.Store.securitygrouppermission" Multiplicity="*" />
+          <End Role="permissions" Type="posdbModel.Store.permissions" Multiplicity="1" />
+          <End Role="securitygrouppermission" Type="posdbModel.Store.securitygrouppermission" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="permissions">
               <PropertyRef Name="id" />
@@ -504,8 +537,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_securitygrouppermission_securitygroup1">
-          <End Role="securitygroup" Type="posModel.Store.securitygroup" Multiplicity="1" />
-          <End Role="securitygrouppermission" Type="posModel.Store.securitygrouppermission" Multiplicity="*" />
+          <End Role="securitygroup" Type="posdbModel.Store.securitygroup" Multiplicity="1" />
+          <End Role="securitygrouppermission" Type="posdbModel.Store.securitygrouppermission" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="securitygroup">
               <PropertyRef Name="id" />
@@ -516,8 +549,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_address1">
-          <End Role="address" Type="posModel.Store.address" Multiplicity="1" />
-          <End Role="staff" Type="posModel.Store.staff" Multiplicity="*" />
+          <End Role="address" Type="posdbModel.Store.address" Multiplicity="1" />
+          <End Role="staff" Type="posdbModel.Store.staff" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="address">
               <PropertyRef Name="id" />
@@ -528,8 +561,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_depertment1">
-          <End Role="department" Type="posModel.Store.department" Multiplicity="1" />
-          <End Role="staff" Type="posModel.Store.staff" Multiplicity="*" />
+          <End Role="department" Type="posdbModel.Store.department" Multiplicity="1" />
+          <End Role="staff" Type="posdbModel.Store.staff" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="department">
               <PropertyRef Name="id" />
@@ -540,8 +573,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_user_securitygroup1">
-          <End Role="securitygroup" Type="posModel.Store.securitygroup" Multiplicity="1" />
-          <End Role="user" Type="posModel.Store.user" Multiplicity="*" />
+          <End Role="securitygroup" Type="posdbModel.Store.securitygroup" Multiplicity="1" />
+          <End Role="user" Type="posdbModel.Store.user" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="securitygroup">
               <PropertyRef Name="id" />
@@ -552,8 +585,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_user_staff1">
-          <End Role="staff" Type="posModel.Store.staff" Multiplicity="1" />
-          <End Role="user" Type="posModel.Store.user" Multiplicity="*" />
+          <End Role="staff" Type="posdbModel.Store.staff" Multiplicity="1" />
+          <End Role="user" Type="posdbModel.Store.user" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="staff">
               <PropertyRef Name="id" />
@@ -567,98 +600,103 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="posModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <Schema Namespace="posdbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="POSDB" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="addresses" EntityType="posModel.address" />
-          <EntitySet Name="companyinfoes" EntityType="posModel.companyinfo" />
-          <EntitySet Name="customers" EntityType="posModel.customer" />
-          <EntitySet Name="departments" EntityType="posModel.department" />
-          <EntitySet Name="menus" EntityType="posModel.menu" />
-          <EntitySet Name="orderchilds" EntityType="posModel.orderchild" />
-          <EntitySet Name="ordermasters" EntityType="posModel.ordermaster" />
-          <EntitySet Name="permissions" EntityType="posModel.permission" />
-          <EntitySet Name="postcodes" EntityType="posModel.postcode" />
-          <EntitySet Name="products" EntityType="posModel.product" />
-          <EntitySet Name="productbuttons" EntityType="posModel.productbutton" />
-          <EntitySet Name="productcategories" EntityType="posModel.productcategory" />
-          <EntitySet Name="productingredients" EntityType="posModel.productingredient" />
-          <EntitySet Name="rawstocklistchilds" EntityType="posModel.rawstocklistchild" />
-          <EntitySet Name="rawstocklistmasters" EntityType="posModel.rawstocklistmaster" />
-          <EntitySet Name="rawstockproducts" EntityType="posModel.rawstockproduct" />
-          <EntitySet Name="securitygroups" EntityType="posModel.securitygroup" />
-          <EntitySet Name="securitygrouppermissions" EntityType="posModel.securitygrouppermission" />
-          <EntitySet Name="servicetypes" EntityType="posModel.servicetype" />
-          <EntitySet Name="staffs" EntityType="posModel.staff" />
-          <EntitySet Name="users" EntityType="posModel.user" />
-          <AssociationSet Name="fk_address_postcode1" Association="posModel.fk_address_postcode1">
+          <EntitySet Name="addresses" EntityType="posdbModel.address" />
+          <EntitySet Name="companyinfoes" EntityType="posdbModel.companyinfo" />
+          <EntitySet Name="customers" EntityType="posdbModel.customer" />
+          <EntitySet Name="departments" EntityType="posdbModel.department" />
+          <EntitySet Name="logininfoes" EntityType="posdbModel.logininfo" />
+          <EntitySet Name="menus" EntityType="posdbModel.menu" />
+          <EntitySet Name="orderchilds" EntityType="posdbModel.orderchild" />
+          <EntitySet Name="ordermasters" EntityType="posdbModel.ordermaster" />
+          <EntitySet Name="permissions" EntityType="posdbModel.permission" />
+          <EntitySet Name="postcodes" EntityType="posdbModel.postcode" />
+          <EntitySet Name="products" EntityType="posdbModel.product" />
+          <EntitySet Name="productbuttons" EntityType="posdbModel.productbutton" />
+          <EntitySet Name="productcategories" EntityType="posdbModel.productcategory" />
+          <EntitySet Name="productingredients" EntityType="posdbModel.productingredient" />
+          <EntitySet Name="rawstocklistchilds" EntityType="posdbModel.rawstocklistchild" />
+          <EntitySet Name="rawstocklistmasters" EntityType="posdbModel.rawstocklistmaster" />
+          <EntitySet Name="rawstockproducts" EntityType="posdbModel.rawstockproduct" />
+          <EntitySet Name="securitygroups" EntityType="posdbModel.securitygroup" />
+          <EntitySet Name="securitygrouppermissions" EntityType="posdbModel.securitygrouppermission" />
+          <EntitySet Name="servicetypes" EntityType="posdbModel.servicetype" />
+          <EntitySet Name="staffs" EntityType="posdbModel.staff" />
+          <EntitySet Name="users" EntityType="posdbModel.user" />
+          <AssociationSet Name="fk_address_postcode1" Association="posdbModel.fk_address_postcode1">
             <End Role="postcode" EntitySet="postcodes" />
             <End Role="address" EntitySet="addresses" />
           </AssociationSet>
-          <AssociationSet Name="fk_companyinfo_address1" Association="posModel.fk_companyinfo_address1">
+          <AssociationSet Name="fk_companyinfo_address1" Association="posdbModel.fk_companyinfo_address1">
             <End Role="address" EntitySet="addresses" />
             <End Role="companyinfo" EntitySet="companyinfoes" />
           </AssociationSet>
-          <AssociationSet Name="fk_customer_address1" Association="posModel.fk_customer_address1">
+          <AssociationSet Name="fk_customer_address1" Association="posdbModel.fk_customer_address1">
             <End Role="address" EntitySet="addresses" />
             <End Role="customer" EntitySet="customers" />
           </AssociationSet>
-          <AssociationSet Name="fk_staff_address1" Association="posModel.fk_staff_address1">
+          <AssociationSet Name="fk_staff_address1" Association="posdbModel.fk_staff_address1">
             <End Role="address" EntitySet="addresses" />
             <End Role="staff" EntitySet="staffs" />
           </AssociationSet>
-          <AssociationSet Name="fk_staff_depertment1" Association="posModel.fk_staff_depertment1">
+          <AssociationSet Name="fk_staff_depertment1" Association="posdbModel.fk_staff_depertment1">
             <End Role="department" EntitySet="departments" />
             <End Role="staff" EntitySet="staffs" />
           </AssociationSet>
-          <AssociationSet Name="fk_product_menu1" Association="posModel.fk_product_menu1">
+          <AssociationSet Name="fk_logininfo_user1" Association="posdbModel.fk_logininfo_user1">
+            <End Role="user" EntitySet="users" />
+            <End Role="logininfo" EntitySet="logininfoes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_product_menu1" Association="posdbModel.fk_product_menu1">
             <End Role="menu" EntitySet="menus" />
             <End Role="product" EntitySet="products" />
           </AssociationSet>
-          <AssociationSet Name="fk_orderchild_ordermaster1" Association="posModel.fk_orderchild_ordermaster1">
+          <AssociationSet Name="fk_orderchild_ordermaster1" Association="posdbModel.fk_orderchild_ordermaster1">
             <End Role="ordermaster" EntitySet="ordermasters" />
             <End Role="orderchild" EntitySet="orderchilds" />
           </AssociationSet>
-          <AssociationSet Name="fk_orderchild_product1" Association="posModel.fk_orderchild_product1">
+          <AssociationSet Name="fk_orderchild_product1" Association="posdbModel.fk_orderchild_product1">
             <End Role="product" EntitySet="products" />
             <End Role="orderchild" EntitySet="orderchilds" />
           </AssociationSet>
-          <AssociationSet Name="fk_ordermaster_servicetype1" Association="posModel.fk_ordermaster_servicetype1">
+          <AssociationSet Name="fk_ordermaster_servicetype1" Association="posdbModel.fk_ordermaster_servicetype1">
             <End Role="servicetype" EntitySet="servicetypes" />
             <End Role="ordermaster" EntitySet="ordermasters" />
           </AssociationSet>
-          <AssociationSet Name="fk_securitygrouppermission_permissions1" Association="posModel.fk_securitygrouppermission_permissions1">
+          <AssociationSet Name="fk_securitygrouppermission_permissions1" Association="posdbModel.fk_securitygrouppermission_permissions1">
             <End Role="permissions" EntitySet="permissions" />
             <End Role="securitygrouppermission" EntitySet="securitygrouppermissions" />
           </AssociationSet>
-          <AssociationSet Name="fk_product_productcategory1" Association="posModel.fk_product_productcategory1">
+          <AssociationSet Name="fk_product_productcategory1" Association="posdbModel.fk_product_productcategory1">
             <End Role="productcategory" EntitySet="productcategories" />
             <End Role="product" EntitySet="products" />
           </AssociationSet>
-          <AssociationSet Name="fk_productbutton_product1" Association="posModel.fk_productbutton_product1">
+          <AssociationSet Name="fk_productbutton_product1" Association="posdbModel.fk_productbutton_product1">
             <End Role="product" EntitySet="products" />
             <End Role="productbutton" EntitySet="productbuttons" />
           </AssociationSet>
-          <AssociationSet Name="fk_productingredients_product" Association="posModel.fk_productingredients_product">
+          <AssociationSet Name="fk_productingredients_product" Association="posdbModel.fk_productingredients_product">
             <End Role="product" EntitySet="products" />
             <End Role="productingredients" EntitySet="productingredients" />
           </AssociationSet>
-          <AssociationSet Name="fk_rawstocklistchild_rawstocklistmaster1" Association="posModel.fk_rawstocklistchild_rawstocklistmaster1">
+          <AssociationSet Name="fk_rawstocklistchild_rawstocklistmaster1" Association="posdbModel.fk_rawstocklistchild_rawstocklistmaster1">
             <End Role="rawstocklistmaster" EntitySet="rawstocklistmasters" />
             <End Role="rawstocklistchild" EntitySet="rawstocklistchilds" />
           </AssociationSet>
-          <AssociationSet Name="fk_rawstocklistchild_rawstockproduct1" Association="posModel.fk_rawstocklistchild_rawstockproduct1">
+          <AssociationSet Name="fk_rawstocklistchild_rawstockproduct1" Association="posdbModel.fk_rawstocklistchild_rawstockproduct1">
             <End Role="rawstockproduct" EntitySet="rawstockproducts" />
             <End Role="rawstocklistchild" EntitySet="rawstocklistchilds" />
           </AssociationSet>
-          <AssociationSet Name="fk_securitygrouppermission_securitygroup1" Association="posModel.fk_securitygrouppermission_securitygroup1">
+          <AssociationSet Name="fk_securitygrouppermission_securitygroup1" Association="posdbModel.fk_securitygrouppermission_securitygroup1">
             <End Role="securitygroup" EntitySet="securitygroups" />
             <End Role="securitygrouppermission" EntitySet="securitygrouppermissions" />
           </AssociationSet>
-          <AssociationSet Name="fk_user_securitygroup1" Association="posModel.fk_user_securitygroup1">
+          <AssociationSet Name="fk_user_securitygroup1" Association="posdbModel.fk_user_securitygroup1">
             <End Role="securitygroup" EntitySet="securitygroups" />
             <End Role="user" EntitySet="users" />
           </AssociationSet>
-          <AssociationSet Name="fk_user_staff1" Association="posModel.fk_user_staff1">
+          <AssociationSet Name="fk_user_staff1" Association="posdbModel.fk_user_staff1">
             <End Role="staff" EntitySet="staffs" />
             <End Role="user" EntitySet="users" />
           </AssociationSet>
@@ -675,10 +713,10 @@
           <Property Name="postaltown" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="country" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="postcode_id" Type="Int32" />
-          <NavigationProperty Name="postcode" Relationship="posModel.fk_address_postcode1" FromRole="address" ToRole="postcode" />
-          <NavigationProperty Name="companyinfoes" Relationship="posModel.fk_companyinfo_address1" FromRole="address" ToRole="companyinfo" />
-          <NavigationProperty Name="customers" Relationship="posModel.fk_customer_address1" FromRole="address" ToRole="customer" />
-          <NavigationProperty Name="staffs" Relationship="posModel.fk_staff_address1" FromRole="address" ToRole="staff" />
+          <NavigationProperty Name="postcode" Relationship="posdbModel.fk_address_postcode1" FromRole="address" ToRole="postcode" />
+          <NavigationProperty Name="companyinfoes" Relationship="posdbModel.fk_companyinfo_address1" FromRole="address" ToRole="companyinfo" />
+          <NavigationProperty Name="customers" Relationship="posdbModel.fk_customer_address1" FromRole="address" ToRole="customer" />
+          <NavigationProperty Name="staffs" Relationship="posdbModel.fk_staff_address1" FromRole="address" ToRole="staff" />
         </EntityType>
         <EntityType Name="companyinfo">
           <Key>
@@ -693,7 +731,7 @@
           <Property Name="website" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="vatregistrationnumber" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="address_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="address" Relationship="posModel.fk_companyinfo_address1" FromRole="companyinfo" ToRole="address" />
+          <NavigationProperty Name="address" Relationship="posdbModel.fk_companyinfo_address1" FromRole="companyinfo" ToRole="address" />
         </EntityType>
         <EntityType Name="customer">
           <Key>
@@ -711,7 +749,7 @@
           <Property Name="creditlimit" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="address_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="address" Relationship="posModel.fk_customer_address1" FromRole="customer" ToRole="address" />
+          <NavigationProperty Name="address" Relationship="posdbModel.fk_customer_address1" FromRole="customer" ToRole="address" />
         </EntityType>
         <EntityType Name="department">
           <Key>
@@ -720,7 +758,21 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="description" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="staffs" Relationship="posModel.fk_staff_depertment1" FromRole="department" ToRole="staff" />
+          <NavigationProperty Name="staffs" Relationship="posdbModel.fk_staff_depertment1" FromRole="department" ToRole="staff" />
+        </EntityType>
+        <EntityType Name="logininfo">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="user_userid" />
+          </Key>
+          <Property Name="lastlogindate" Type="DateTime" />
+          <Property Name="lockedout" Type="Boolean" />
+          <Property Name="cumulativefailures" Type="Int32" />
+          <Property Name="registerdate" Type="DateTime" />
+          <Property Name="updatedate" Type="DateTime" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="user_userid" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="loginuser" Relationship="posdbModel.fk_logininfo_user1" FromRole="logininfo" ToRole="user" />
         </EntityType>
         <EntityType Name="menu">
           <Key>
@@ -732,7 +784,7 @@
           <Property Name="position" Type="Int32" />
           <Property Name="buttoncolor" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
           <Property Name="buttontextcolor" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="products" Relationship="posModel.fk_product_menu1" FromRole="menu" ToRole="product" />
+          <NavigationProperty Name="products" Relationship="posdbModel.fk_product_menu1" FromRole="menu" ToRole="product" />
         </EntityType>
         <EntityType Name="orderchild">
           <Key>
@@ -744,8 +796,8 @@
           <Property Name="producttype" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="ordermaster_id" Type="Int32" Nullable="false" />
           <Property Name="product_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ordermaster" Relationship="posModel.fk_orderchild_ordermaster1" FromRole="orderchild" ToRole="ordermaster" />
-          <NavigationProperty Name="product" Relationship="posModel.fk_orderchild_product1" FromRole="orderchild" ToRole="product" />
+          <NavigationProperty Name="ordermaster" Relationship="posdbModel.fk_orderchild_ordermaster1" FromRole="orderchild" ToRole="ordermaster" />
+          <NavigationProperty Name="product" Relationship="posdbModel.fk_orderchild_product1" FromRole="orderchild" ToRole="product" />
         </EntityType>
         <EntityType Name="ordermaster">
           <Key>
@@ -765,8 +817,8 @@
           <Property Name="paytype" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="printreceiptcopies" Type="Int32" />
           <Property Name="servicetype_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="orderchilds" Relationship="posModel.fk_orderchild_ordermaster1" FromRole="ordermaster" ToRole="orderchild" />
-          <NavigationProperty Name="servicetype" Relationship="posModel.fk_ordermaster_servicetype1" FromRole="ordermaster" ToRole="servicetype" />
+          <NavigationProperty Name="orderchilds" Relationship="posdbModel.fk_orderchild_ordermaster1" FromRole="ordermaster" ToRole="orderchild" />
+          <NavigationProperty Name="servicetype" Relationship="posdbModel.fk_ordermaster_servicetype1" FromRole="ordermaster" ToRole="servicetype" />
         </EntityType>
         <EntityType Name="permission">
           <Key>
@@ -775,7 +827,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="securitygrouppermissions" Relationship="posModel.fk_securitygrouppermission_permissions1" FromRole="permissions" ToRole="securitygrouppermission" />
+          <NavigationProperty Name="securitygrouppermissions" Relationship="posdbModel.fk_securitygrouppermission_permissions1" FromRole="permissions" ToRole="securitygrouppermission" />
         </EntityType>
         <EntityType Name="postcode">
           <Key>
@@ -783,7 +835,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="code" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="addresses" Relationship="posModel.fk_address_postcode1" FromRole="postcode" ToRole="address" />
+          <NavigationProperty Name="addresses" Relationship="posdbModel.fk_address_postcode1" FromRole="postcode" ToRole="address" />
         </EntityType>
         <EntityType Name="product">
           <Key>
@@ -811,11 +863,11 @@
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="productcategory_id" Type="Int32" Nullable="false" />
           <Property Name="menu_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="menu" Relationship="posModel.fk_product_menu1" FromRole="product" ToRole="menu" />
-          <NavigationProperty Name="orderchilds" Relationship="posModel.fk_orderchild_product1" FromRole="product" ToRole="orderchild" />
-          <NavigationProperty Name="productcategory" Relationship="posModel.fk_product_productcategory1" FromRole="product" ToRole="productcategory" />
-          <NavigationProperty Name="productbutton" Relationship="posModel.fk_productbutton_product1" FromRole="product" ToRole="productbutton" />
-          <NavigationProperty Name="productingredients" Relationship="posModel.fk_productingredients_product" FromRole="product" ToRole="productingredients" />
+          <NavigationProperty Name="menu" Relationship="posdbModel.fk_product_menu1" FromRole="product" ToRole="menu" />
+          <NavigationProperty Name="orderchilds" Relationship="posdbModel.fk_orderchild_product1" FromRole="product" ToRole="orderchild" />
+          <NavigationProperty Name="productcategory" Relationship="posdbModel.fk_product_productcategory1" FromRole="product" ToRole="productcategory" />
+          <NavigationProperty Name="productbutton" Relationship="posdbModel.fk_productbutton_product1" FromRole="product" ToRole="productbutton" />
+          <NavigationProperty Name="productingredients" Relationship="posdbModel.fk_productingredients_product" FromRole="product" ToRole="productingredients" />
         </EntityType>
         <EntityType Name="productbutton">
           <Key>
@@ -826,7 +878,7 @@
           <Property Name="textcolor" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="fontsize" Type="Int32" />
           <Property Name="textbold" Type="Boolean" />
-          <NavigationProperty Name="product" Relationship="posModel.fk_productbutton_product1" FromRole="productbutton" ToRole="product" />
+          <NavigationProperty Name="product" Relationship="posdbModel.fk_productbutton_product1" FromRole="productbutton" ToRole="product" />
         </EntityType>
         <EntityType Name="productcategory">
           <Key>
@@ -835,7 +887,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="categorytype" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="description" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="products" Relationship="posModel.fk_product_productcategory1" FromRole="productcategory" ToRole="product" />
+          <NavigationProperty Name="products" Relationship="posdbModel.fk_product_productcategory1" FromRole="productcategory" ToRole="product" />
         </EntityType>
         <EntityType Name="productingredient">
           <Key>
@@ -846,7 +898,7 @@
           <Property Name="chargeable" Type="Boolean" />
           <Property Name="amount" Type="Decimal" />
           <Property Name="product_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="product" Relationship="posModel.fk_productingredients_product" FromRole="productingredients" ToRole="product" />
+          <NavigationProperty Name="product" Relationship="posdbModel.fk_productingredients_product" FromRole="productingredients" ToRole="product" />
         </EntityType>
         <EntityType Name="rawstocklistchild">
           <Key>
@@ -857,8 +909,8 @@
           <Property Name="amount" Type="Decimal" />
           <Property Name="rawstocklistmaster_id" Type="Int32" Nullable="false" />
           <Property Name="rawstockproduct_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="rawstocklistmaster" Relationship="posModel.fk_rawstocklistchild_rawstocklistmaster1" FromRole="rawstocklistchild" ToRole="rawstocklistmaster" />
-          <NavigationProperty Name="rawstockproduct" Relationship="posModel.fk_rawstocklistchild_rawstockproduct1" FromRole="rawstocklistchild" ToRole="rawstockproduct" />
+          <NavigationProperty Name="rawstocklistmaster" Relationship="posdbModel.fk_rawstocklistchild_rawstocklistmaster1" FromRole="rawstocklistchild" ToRole="rawstocklistmaster" />
+          <NavigationProperty Name="rawstockproduct" Relationship="posdbModel.fk_rawstocklistchild_rawstockproduct1" FromRole="rawstocklistchild" ToRole="rawstockproduct" />
         </EntityType>
         <EntityType Name="rawstocklistmaster">
           <Key>
@@ -869,7 +921,7 @@
           <Property Name="total" Type="Decimal" />
           <Property Name="comment" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="server" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="rawstocklistchilds" Relationship="posModel.fk_rawstocklistchild_rawstocklistmaster1" FromRole="rawstocklistmaster" ToRole="rawstocklistchild" />
+          <NavigationProperty Name="rawstocklistchilds" Relationship="posdbModel.fk_rawstocklistchild_rawstocklistmaster1" FromRole="rawstocklistmaster" ToRole="rawstocklistchild" />
         </EntityType>
         <EntityType Name="rawstockproduct">
           <Key>
@@ -880,7 +932,7 @@
           <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="buyingprice" Type="Decimal" />
           <Property Name="quantity" Type="Int32" />
-          <NavigationProperty Name="rawstocklistchilds" Relationship="posModel.fk_rawstocklistchild_rawstockproduct1" FromRole="rawstockproduct" ToRole="rawstocklistchild" />
+          <NavigationProperty Name="rawstocklistchilds" Relationship="posdbModel.fk_rawstocklistchild_rawstockproduct1" FromRole="rawstockproduct" ToRole="rawstocklistchild" />
         </EntityType>
         <EntityType Name="securitygroup">
           <Key>
@@ -889,8 +941,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="description" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="securitygrouppermissions" Relationship="posModel.fk_securitygrouppermission_securitygroup1" FromRole="securitygroup" ToRole="securitygrouppermission" />
-          <NavigationProperty Name="users" Relationship="posModel.fk_user_securitygroup1" FromRole="securitygroup" ToRole="user" />
+          <NavigationProperty Name="securitygrouppermissions" Relationship="posdbModel.fk_securitygrouppermission_securitygroup1" FromRole="securitygroup" ToRole="securitygrouppermission" />
+          <NavigationProperty Name="users" Relationship="posdbModel.fk_user_securitygroup1" FromRole="securitygroup" ToRole="user" />
         </EntityType>
         <EntityType Name="securitygrouppermission">
           <Key>
@@ -899,17 +951,17 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="permissions_id" Type="Int32" Nullable="false" />
           <Property Name="securitygroup_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="permission" Relationship="posModel.fk_securitygrouppermission_permissions1" FromRole="securitygrouppermission" ToRole="permissions" />
-          <NavigationProperty Name="securitygroup" Relationship="posModel.fk_securitygrouppermission_securitygroup1" FromRole="securitygrouppermission" ToRole="securitygroup" />
+          <NavigationProperty Name="permission" Relationship="posdbModel.fk_securitygrouppermission_permissions1" FromRole="securitygrouppermission" ToRole="permissions" />
+          <NavigationProperty Name="securitygroup" Relationship="posdbModel.fk_securitygrouppermission_securitygroup1" FromRole="securitygrouppermission" ToRole="securitygroup" />
         </EntityType>
         <EntityType Name="servicetype">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="servicetype1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="description" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="ordermasters" Relationship="posModel.fk_ordermaster_servicetype1" FromRole="servicetype" ToRole="ordermaster" />
+          <NavigationProperty Name="ordermasters" Relationship="posdbModel.fk_ordermaster_servicetype1" FromRole="servicetype" ToRole="ordermaster" />
         </EntityType>
         <EntityType Name="staff">
           <Key>
@@ -929,26 +981,28 @@
           <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="department_id" Type="Int32" Nullable="false" />
           <Property Name="address_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="address" Relationship="posModel.fk_staff_address1" FromRole="staff" ToRole="address" />
-          <NavigationProperty Name="department" Relationship="posModel.fk_staff_depertment1" FromRole="staff" ToRole="department" />
-          <NavigationProperty Name="users" Relationship="posModel.fk_user_staff1" FromRole="staff" ToRole="user" />
+          <NavigationProperty Name="address" Relationship="posdbModel.fk_staff_address1" FromRole="staff" ToRole="address" />
+          <NavigationProperty Name="department" Relationship="posdbModel.fk_staff_depertment1" FromRole="staff" ToRole="department" />
+          <NavigationProperty Name="users" Relationship="posdbModel.fk_user_staff1" FromRole="staff" ToRole="user" />
         </EntityType>
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="userid" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="userid" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="userid" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="password" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="status" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
           <Property Name="securitygroup_id" Type="Int32" Nullable="false" />
           <Property Name="staff_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="securitygroup" Relationship="posModel.fk_user_securitygroup1" FromRole="user" ToRole="securitygroup" />
-          <NavigationProperty Name="staff" Relationship="posModel.fk_user_staff1" FromRole="user" ToRole="staff" />
+          <NavigationProperty Name="logininfo" Relationship="posdbModel.fk_logininfo_user1" FromRole="user" ToRole="logininfo" />
+          <NavigationProperty Name="securitygroup" Relationship="posdbModel.fk_user_securitygroup1" FromRole="user" ToRole="securitygroup" />
+          <NavigationProperty Name="staff" Relationship="posdbModel.fk_user_staff1" FromRole="user" ToRole="staff" />
         </EntityType>
         <Association Name="fk_address_postcode1">
-          <End Role="postcode" Type="posModel.postcode" Multiplicity="0..1" />
-          <End Role="address" Type="posModel.address" Multiplicity="*" />
+          <End Role="postcode" Type="posdbModel.postcode" Multiplicity="0..1" />
+          <End Role="address" Type="posdbModel.address" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="postcode">
               <PropertyRef Name="id" />
@@ -959,8 +1013,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_companyinfo_address1">
-          <End Role="address" Type="posModel.address" Multiplicity="1" />
-          <End Role="companyinfo" Type="posModel.companyinfo" Multiplicity="*" />
+          <End Role="address" Type="posdbModel.address" Multiplicity="1" />
+          <End Role="companyinfo" Type="posdbModel.companyinfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="address">
               <PropertyRef Name="id" />
@@ -971,8 +1025,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_customer_address1">
-          <End Role="address" Type="posModel.address" Multiplicity="1" />
-          <End Role="customer" Type="posModel.customer" Multiplicity="*" />
+          <End Role="address" Type="posdbModel.address" Multiplicity="1" />
+          <End Role="customer" Type="posdbModel.customer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="address">
               <PropertyRef Name="id" />
@@ -983,8 +1037,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_address1">
-          <End Role="address" Type="posModel.address" Multiplicity="1" />
-          <End Role="staff" Type="posModel.staff" Multiplicity="*" />
+          <End Role="address" Type="posdbModel.address" Multiplicity="1" />
+          <End Role="staff" Type="posdbModel.staff" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="address">
               <PropertyRef Name="id" />
@@ -995,8 +1049,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_depertment1">
-          <End Role="department" Type="posModel.department" Multiplicity="1" />
-          <End Role="staff" Type="posModel.staff" Multiplicity="*" />
+          <End Role="department" Type="posdbModel.department" Multiplicity="1" />
+          <End Role="staff" Type="posdbModel.staff" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="department">
               <PropertyRef Name="id" />
@@ -1006,9 +1060,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_logininfo_user1">
+          <End Role="user" Type="posdbModel.user" Multiplicity="1" />
+          <End Role="logininfo" Type="posdbModel.logininfo" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+              <PropertyRef Name="userid" />
+            </Principal>
+            <Dependent Role="logininfo">
+              <PropertyRef Name="user_id" />
+              <PropertyRef Name="user_userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_product_menu1">
-          <End Role="menu" Type="posModel.menu" Multiplicity="1" />
-          <End Role="product" Type="posModel.product" Multiplicity="*" />
+          <End Role="menu" Type="posdbModel.menu" Multiplicity="1" />
+          <End Role="product" Type="posdbModel.product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="menu">
               <PropertyRef Name="id" />
@@ -1019,8 +1087,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_orderchild_ordermaster1">
-          <End Role="ordermaster" Type="posModel.ordermaster" Multiplicity="1" />
-          <End Role="orderchild" Type="posModel.orderchild" Multiplicity="*" />
+          <End Role="ordermaster" Type="posdbModel.ordermaster" Multiplicity="1" />
+          <End Role="orderchild" Type="posdbModel.orderchild" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ordermaster">
               <PropertyRef Name="id" />
@@ -1031,8 +1099,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_orderchild_product1">
-          <End Role="product" Type="posModel.product" Multiplicity="1" />
-          <End Role="orderchild" Type="posModel.orderchild" Multiplicity="*" />
+          <End Role="product" Type="posdbModel.product" Multiplicity="1" />
+          <End Role="orderchild" Type="posdbModel.orderchild" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="product">
               <PropertyRef Name="id" />
@@ -1043,8 +1111,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_ordermaster_servicetype1">
-          <End Role="servicetype" Type="posModel.servicetype" Multiplicity="1" />
-          <End Role="ordermaster" Type="posModel.ordermaster" Multiplicity="*" />
+          <End Role="servicetype" Type="posdbModel.servicetype" Multiplicity="1" />
+          <End Role="ordermaster" Type="posdbModel.ordermaster" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="servicetype">
               <PropertyRef Name="id" />
@@ -1055,8 +1123,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_securitygrouppermission_permissions1">
-          <End Role="permissions" Type="posModel.permission" Multiplicity="1" />
-          <End Role="securitygrouppermission" Type="posModel.securitygrouppermission" Multiplicity="*" />
+          <End Role="permissions" Type="posdbModel.permission" Multiplicity="1" />
+          <End Role="securitygrouppermission" Type="posdbModel.securitygrouppermission" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="permissions">
               <PropertyRef Name="id" />
@@ -1067,8 +1135,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_product_productcategory1">
-          <End Role="productcategory" Type="posModel.productcategory" Multiplicity="1" />
-          <End Role="product" Type="posModel.product" Multiplicity="*" />
+          <End Role="productcategory" Type="posdbModel.productcategory" Multiplicity="1" />
+          <End Role="product" Type="posdbModel.product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="productcategory">
               <PropertyRef Name="id" />
@@ -1079,8 +1147,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_productbutton_product1">
-          <End Role="product" Type="posModel.product" Multiplicity="1" />
-          <End Role="productbutton" Type="posModel.productbutton" Multiplicity="0..1" />
+          <End Role="product" Type="posdbModel.product" Multiplicity="1" />
+          <End Role="productbutton" Type="posdbModel.productbutton" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="product">
               <PropertyRef Name="id" />
@@ -1091,8 +1159,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_productingredients_product">
-          <End Role="product" Type="posModel.product" Multiplicity="1" />
-          <End Role="productingredients" Type="posModel.productingredient" Multiplicity="*" />
+          <End Role="product" Type="posdbModel.product" Multiplicity="1" />
+          <End Role="productingredients" Type="posdbModel.productingredient" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="product">
               <PropertyRef Name="id" />
@@ -1103,8 +1171,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_rawstocklistchild_rawstocklistmaster1">
-          <End Role="rawstocklistmaster" Type="posModel.rawstocklistmaster" Multiplicity="1" />
-          <End Role="rawstocklistchild" Type="posModel.rawstocklistchild" Multiplicity="*" />
+          <End Role="rawstocklistmaster" Type="posdbModel.rawstocklistmaster" Multiplicity="1" />
+          <End Role="rawstocklistchild" Type="posdbModel.rawstocklistchild" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="rawstocklistmaster">
               <PropertyRef Name="id" />
@@ -1115,8 +1183,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_rawstocklistchild_rawstockproduct1">
-          <End Role="rawstockproduct" Type="posModel.rawstockproduct" Multiplicity="1" />
-          <End Role="rawstocklistchild" Type="posModel.rawstocklistchild" Multiplicity="*" />
+          <End Role="rawstockproduct" Type="posdbModel.rawstockproduct" Multiplicity="1" />
+          <End Role="rawstocklistchild" Type="posdbModel.rawstocklistchild" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="rawstockproduct">
               <PropertyRef Name="id" />
@@ -1127,8 +1195,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_securitygrouppermission_securitygroup1">
-          <End Role="securitygroup" Type="posModel.securitygroup" Multiplicity="1" />
-          <End Role="securitygrouppermission" Type="posModel.securitygrouppermission" Multiplicity="*" />
+          <End Role="securitygroup" Type="posdbModel.securitygroup" Multiplicity="1" />
+          <End Role="securitygrouppermission" Type="posdbModel.securitygrouppermission" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="securitygroup">
               <PropertyRef Name="id" />
@@ -1139,8 +1207,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_user_securitygroup1">
-          <End Role="securitygroup" Type="posModel.securitygroup" Multiplicity="1" />
-          <End Role="user" Type="posModel.user" Multiplicity="*" />
+          <End Role="securitygroup" Type="posdbModel.securitygroup" Multiplicity="1" />
+          <End Role="user" Type="posdbModel.user" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="securitygroup">
               <PropertyRef Name="id" />
@@ -1151,8 +1219,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_user_staff1">
-          <End Role="staff" Type="posModel.staff" Multiplicity="1" />
-          <End Role="user" Type="posModel.user" Multiplicity="*" />
+          <End Role="staff" Type="posdbModel.staff" Multiplicity="1" />
+          <End Role="user" Type="posdbModel.user" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="staff">
               <PropertyRef Name="id" />
@@ -1167,8 +1235,8 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="posModelStoreContainer" CdmEntityContainer="POSDB">
-          <EntitySetMapping Name="addresses"><EntityTypeMapping TypeName="posModel.address"><MappingFragment StoreEntitySet="address">
+        <EntityContainerMapping StorageEntityContainer="posdbModelStoreContainer" CdmEntityContainer="POSDB">
+          <EntitySetMapping Name="addresses"><EntityTypeMapping TypeName="posdbModel.address"><MappingFragment StoreEntitySet="address">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="buildingname" ColumnName="buildingname" />
             <ScalarProperty Name="houseno" ColumnName="houseno" />
@@ -1178,7 +1246,7 @@
             <ScalarProperty Name="country" ColumnName="country" />
             <ScalarProperty Name="postcode_id" ColumnName="postcode_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="companyinfoes"><EntityTypeMapping TypeName="posModel.companyinfo"><MappingFragment StoreEntitySet="companyinfo">
+          <EntitySetMapping Name="companyinfoes"><EntityTypeMapping TypeName="posdbModel.companyinfo"><MappingFragment StoreEntitySet="companyinfo">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="name" ColumnName="name" />
             <ScalarProperty Name="phone" ColumnName="phone" />
@@ -1189,7 +1257,7 @@
             <ScalarProperty Name="vatregistrationnumber" ColumnName="vatregistrationnumber" />
             <ScalarProperty Name="address_id" ColumnName="address_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="customers"><EntityTypeMapping TypeName="posModel.customer"><MappingFragment StoreEntitySet="customer">
+          <EntitySetMapping Name="customers"><EntityTypeMapping TypeName="posdbModel.customer"><MappingFragment StoreEntitySet="customer">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="code" ColumnName="code" />
             <ScalarProperty Name="type" ColumnName="type" />
@@ -1203,12 +1271,21 @@
             <ScalarProperty Name="image" ColumnName="image" />
             <ScalarProperty Name="address_id" ColumnName="address_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="departments"><EntityTypeMapping TypeName="posModel.department"><MappingFragment StoreEntitySet="department">
+          <EntitySetMapping Name="departments"><EntityTypeMapping TypeName="posdbModel.department"><MappingFragment StoreEntitySet="department">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="name" ColumnName="name" />
             <ScalarProperty Name="description" ColumnName="description" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="menus"><EntityTypeMapping TypeName="posModel.menu"><MappingFragment StoreEntitySet="menu">
+          <EntitySetMapping Name="logininfoes"><EntityTypeMapping TypeName="posdbModel.logininfo"><MappingFragment StoreEntitySet="logininfo">
+            <ScalarProperty Name="lastlogindate" ColumnName="lastlogindate" />
+            <ScalarProperty Name="lockedout" ColumnName="lockedout" />
+            <ScalarProperty Name="cumulativefailures" ColumnName="cumulativefailures" />
+            <ScalarProperty Name="registerdate" ColumnName="registerdate" />
+            <ScalarProperty Name="updatedate" ColumnName="updatedate" />
+            <ScalarProperty Name="user_id" ColumnName="user_id" />
+            <ScalarProperty Name="user_userid" ColumnName="user_userid" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="menus"><EntityTypeMapping TypeName="posdbModel.menu"><MappingFragment StoreEntitySet="menu">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="name" ColumnName="name" />
             <ScalarProperty Name="description" ColumnName="description" />
@@ -1216,7 +1293,7 @@
             <ScalarProperty Name="buttoncolor" ColumnName="buttoncolor" />
             <ScalarProperty Name="buttontextcolor" ColumnName="buttontextcolor" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="orderchilds"><EntityTypeMapping TypeName="posModel.orderchild"><MappingFragment StoreEntitySet="orderchild">
+          <EntitySetMapping Name="orderchilds"><EntityTypeMapping TypeName="posdbModel.orderchild"><MappingFragment StoreEntitySet="orderchild">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="quantity" ColumnName="quantity" />
             <ScalarProperty Name="amount" ColumnName="amount" />
@@ -1224,7 +1301,7 @@
             <ScalarProperty Name="ordermaster_id" ColumnName="ordermaster_id" />
             <ScalarProperty Name="product_id" ColumnName="product_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ordermasters"><EntityTypeMapping TypeName="posModel.ordermaster"><MappingFragment StoreEntitySet="ordermaster">
+          <EntitySetMapping Name="ordermasters"><EntityTypeMapping TypeName="posdbModel.ordermaster"><MappingFragment StoreEntitySet="ordermaster">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="ticketno" ColumnName="ticketno" />
             <ScalarProperty Name="orderdate" ColumnName="orderdate" />
@@ -1240,16 +1317,16 @@
             <ScalarProperty Name="printreceiptcopies" ColumnName="printreceiptcopies" />
             <ScalarProperty Name="servicetype_id" ColumnName="servicetype_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="permissions"><EntityTypeMapping TypeName="posModel.permission"><MappingFragment StoreEntitySet="permissions">
+          <EntitySetMapping Name="permissions"><EntityTypeMapping TypeName="posdbModel.permission"><MappingFragment StoreEntitySet="permissions">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="code" ColumnName="code" />
             <ScalarProperty Name="name" ColumnName="name" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="postcodes"><EntityTypeMapping TypeName="posModel.postcode"><MappingFragment StoreEntitySet="postcode">
+          <EntitySetMapping Name="postcodes"><EntityTypeMapping TypeName="posdbModel.postcode"><MappingFragment StoreEntitySet="postcode">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="code" ColumnName="code" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="products"><EntityTypeMapping TypeName="posModel.product"><MappingFragment StoreEntitySet="product">
+          <EntitySetMapping Name="products"><EntityTypeMapping TypeName="posdbModel.product"><MappingFragment StoreEntitySet="product">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="code" ColumnName="code" />
             <ScalarProperty Name="name" ColumnName="name" />
@@ -1273,62 +1350,62 @@
             <ScalarProperty Name="productcategory_id" ColumnName="productcategory_id" />
             <ScalarProperty Name="menu_id" ColumnName="menu_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="productbuttons"><EntityTypeMapping TypeName="posModel.productbutton"><MappingFragment StoreEntitySet="productbutton">
+          <EntitySetMapping Name="productbuttons"><EntityTypeMapping TypeName="posdbModel.productbutton"><MappingFragment StoreEntitySet="productbutton">
             <ScalarProperty Name="product_id" ColumnName="product_id" />
             <ScalarProperty Name="color" ColumnName="color" />
             <ScalarProperty Name="textcolor" ColumnName="textcolor" />
             <ScalarProperty Name="fontsize" ColumnName="fontsize" />
             <ScalarProperty Name="textbold" ColumnName="textbold" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="productcategories"><EntityTypeMapping TypeName="posModel.productcategory"><MappingFragment StoreEntitySet="productcategory">
+          <EntitySetMapping Name="productcategories"><EntityTypeMapping TypeName="posdbModel.productcategory"><MappingFragment StoreEntitySet="productcategory">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="categorytype" ColumnName="categorytype" />
             <ScalarProperty Name="description" ColumnName="description" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="productingredients"><EntityTypeMapping TypeName="posModel.productingredient"><MappingFragment StoreEntitySet="productingredients">
+          <EntitySetMapping Name="productingredients"><EntityTypeMapping TypeName="posdbModel.productingredient"><MappingFragment StoreEntitySet="productingredients">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="ingredient" ColumnName="ingredient" />
             <ScalarProperty Name="chargeable" ColumnName="chargeable" />
             <ScalarProperty Name="amount" ColumnName="amount" />
             <ScalarProperty Name="product_id" ColumnName="product_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="rawstocklistchilds"><EntityTypeMapping TypeName="posModel.rawstocklistchild"><MappingFragment StoreEntitySet="rawstocklistchild">
+          <EntitySetMapping Name="rawstocklistchilds"><EntityTypeMapping TypeName="posdbModel.rawstocklistchild"><MappingFragment StoreEntitySet="rawstocklistchild">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="quantity" ColumnName="quantity" />
             <ScalarProperty Name="amount" ColumnName="amount" />
             <ScalarProperty Name="rawstocklistmaster_id" ColumnName="rawstocklistmaster_id" />
             <ScalarProperty Name="rawstockproduct_id" ColumnName="rawstockproduct_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="rawstocklistmasters"><EntityTypeMapping TypeName="posModel.rawstocklistmaster"><MappingFragment StoreEntitySet="rawstocklistmaster">
+          <EntitySetMapping Name="rawstocklistmasters"><EntityTypeMapping TypeName="posdbModel.rawstocklistmaster"><MappingFragment StoreEntitySet="rawstocklistmaster">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="date" ColumnName="date" />
             <ScalarProperty Name="total" ColumnName="total" />
             <ScalarProperty Name="comment" ColumnName="comment" />
             <ScalarProperty Name="server" ColumnName="server" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="rawstockproducts"><EntityTypeMapping TypeName="posModel.rawstockproduct"><MappingFragment StoreEntitySet="rawstockproduct">
+          <EntitySetMapping Name="rawstockproducts"><EntityTypeMapping TypeName="posdbModel.rawstockproduct"><MappingFragment StoreEntitySet="rawstockproduct">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="code" ColumnName="code" />
             <ScalarProperty Name="name" ColumnName="name" />
             <ScalarProperty Name="buyingprice" ColumnName="buyingprice" />
             <ScalarProperty Name="quantity" ColumnName="quantity" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="securitygroups"><EntityTypeMapping TypeName="posModel.securitygroup"><MappingFragment StoreEntitySet="securitygroup">
+          <EntitySetMapping Name="securitygroups"><EntityTypeMapping TypeName="posdbModel.securitygroup"><MappingFragment StoreEntitySet="securitygroup">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="name" ColumnName="name" />
             <ScalarProperty Name="description" ColumnName="description" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="securitygrouppermissions"><EntityTypeMapping TypeName="posModel.securitygrouppermission"><MappingFragment StoreEntitySet="securitygrouppermission">
+          <EntitySetMapping Name="securitygrouppermissions"><EntityTypeMapping TypeName="posdbModel.securitygrouppermission"><MappingFragment StoreEntitySet="securitygrouppermission">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="permissions_id" ColumnName="permissions_id" />
             <ScalarProperty Name="securitygroup_id" ColumnName="securitygroup_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="servicetypes"><EntityTypeMapping TypeName="posModel.servicetype"><MappingFragment StoreEntitySet="servicetype">
+          <EntitySetMapping Name="servicetypes"><EntityTypeMapping TypeName="posdbModel.servicetype"><MappingFragment StoreEntitySet="servicetype">
             <ScalarProperty Name="id" ColumnName="id" />
-            <ScalarProperty Name="servicetype1" ColumnName="servicetype" />
+            <ScalarProperty Name="name" ColumnName="name" />
             <ScalarProperty Name="description" ColumnName="description" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="staffs"><EntityTypeMapping TypeName="posModel.staff"><MappingFragment StoreEntitySet="staff">
+          <EntitySetMapping Name="staffs"><EntityTypeMapping TypeName="posdbModel.staff"><MappingFragment StoreEntitySet="staff">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="code" ColumnName="code" />
             <ScalarProperty Name="lastname" ColumnName="lastname" />
@@ -1344,7 +1421,7 @@
             <ScalarProperty Name="department_id" ColumnName="department_id" />
             <ScalarProperty Name="address_id" ColumnName="address_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="users"><EntityTypeMapping TypeName="posModel.user"><MappingFragment StoreEntitySet="user">
+          <EntitySetMapping Name="users"><EntityTypeMapping TypeName="posdbModel.user"><MappingFragment StoreEntitySet="user">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="userid" ColumnName="userid" />
             <ScalarProperty Name="password" ColumnName="password" />
@@ -1373,85 +1450,90 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="Model1">
-        <EntityTypeShape EntityType="posModel.address" Width="1.5" PointX="10" PointY="7" Height="3.3263964843749996" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.companyinfo" Width="1.5" PointX="12.25" PointY="5" Height="2.9417936197916656" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.customer" Width="1.5" PointX="12.25" PointY="8.75" Height="3.5186979166666656" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.department" Width="1.5" PointX="13" PointY="1.75" Height="1.7879850260416657" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.menu" Width="1.5" PointX="0.75" PointY="5.375" Height="2.3648893229166656" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.orderchild" Width="1.5" PointX="5.25" PointY="3.25" Height="2.5571907552083322" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.ordermaster" Width="1.5" PointX="3" PointY="10.5" Height="4.0956022135416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.permission" Width="1.5" PointX="15.25" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.postcode" Width="1.5" PointX="7.75" PointY="7.875" Height="1.5956835937499987" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.product" Width="1.5" PointX="3" PointY="3.375" Height="6.2109179687500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.productbutton" Width="1.5" PointX="5.25" PointY="7.25" Height="2.172587890625004" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.productcategory" Width="1.5" PointX="0.75" PointY="2.625" Height="1.7879850260416745" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.productingredient" Width="1.5" PointX="5.25" PointY="10.25" Height="2.1725878906250031" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.rawstocklistchild" Width="1.5" PointX="8" PointY="14" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.rawstocklistmaster" Width="1.5" PointX="5.75" PointY="14.125" Height="2.1725878906250031" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.rawstockproduct" Width="1.5" PointX="5.75" PointY="17.125" Height="2.1725878906250031" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.securitygroup" Width="1.5" PointX="15.25" PointY="3.625" Height="1.9802864583333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.securitygrouppermission" Width="1.5" PointX="17.5" PointY="3.625" Height="1.9802864583333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.servicetype" Width="1.5" PointX="0.75" PointY="11.625" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.staff" Width="1.5" PointX="15.25" PointY="6.5" Height="4.2879036458333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="posModel.user" Width="1.5" PointX="17.5" PointY="7.375" Height="2.5571907552083388" IsExpanded="true" />
-        <AssociationConnector Association="posModel.fk_address_postcode1" ManuallyRouted="false">
+      <Diagram Name="POSModel">
+        <EntityTypeShape EntityType="posdbModel.address" Width="1.5" PointX="10" PointY="7" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.companyinfo" Width="1.5" PointX="12.25" PointY="5" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.customer" Width="1.5" PointX="12.25" PointY="8.75" Height="3.5186979166666656" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.department" Width="1.5" PointX="13" PointY="1.75" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.logininfo" Width="1.5" PointX="19.75" PointY="7.375" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.menu" Width="1.5" PointX="0.75" PointY="5.375" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.orderchild" Width="1.5" PointX="5.25" PointY="3.25" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.ordermaster" Width="1.5" PointX="3" PointY="10.5" Height="4.0956022135416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.permission" Width="1.5" PointX="15.25" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.postcode" Width="1.5" PointX="7.75" PointY="7.875" Height="1.5956835937500005" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.product" Width="1.5" PointX="3" PointY="3.375" Height="6.2109179687500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.productbutton" Width="1.5" PointX="5.25" PointY="7.25" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.productcategory" Width="1.5" PointX="0.75" PointY="2.625" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.productingredient" Width="1.5" PointX="5.25" PointY="10.25" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.rawstocklistchild" Width="1.5" PointX="8" PointY="14" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.rawstocklistmaster" Width="1.5" PointX="5.75" PointY="14.125" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.rawstockproduct" Width="1.5" PointX="5.75" PointY="17.125" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.securitygroup" Width="1.5" PointX="15.25" PointY="3.625" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.securitygrouppermission" Width="1.5" PointX="17.5" PointY="3.625" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.servicetype" Width="1.5" PointX="0.75" PointY="11.625" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.staff" Width="1.5" PointX="15.25" PointY="6.5" Height="4.2879036458333282" IsExpanded="true" />
+        <EntityTypeShape EntityType="posdbModel.user" Width="1.5" PointX="17.5" PointY="7.25" Height="2.7494921875000067" IsExpanded="true" />
+        <AssociationConnector Association="posdbModel.fk_address_postcode1" ManuallyRouted="false">
           <ConnectorPoint PointX="9.25" PointY="8.672841796875" />
           <ConnectorPoint PointX="10" PointY="8.672841796875" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_companyinfo_address1" ManuallyRouted="false">
+        <AssociationConnector Association="posdbModel.fk_companyinfo_address1" ManuallyRouted="false">
           <ConnectorPoint PointX="11.5" PointY="7.4708968098958328" />
           <ConnectorPoint PointX="12.25" PointY="7.4708968098958328" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_customer_address1" ManuallyRouted="false">
+        <AssociationConnector Association="posdbModel.fk_customer_address1" ManuallyRouted="false">
           <ConnectorPoint PointX="11.5" PointY="9.5381982421875" />
           <ConnectorPoint PointX="12.25" PointY="9.5381982421875" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_staff_address1" ManuallyRouted="false">
+        <AssociationConnector Association="posdbModel.fk_staff_address1" ManuallyRouted="false">
           <ConnectorPoint PointX="11.5" PointY="8.3458968098958337" />
           <ConnectorPoint PointX="15.25" PointY="8.3458968098958337" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_staff_depertment1" ManuallyRouted="false">
+        <AssociationConnector Association="posdbModel.fk_staff_depertment1" ManuallyRouted="false">
           <ConnectorPoint PointX="14.15625" PointY="3.5379850260416656" />
           <ConnectorPoint PointX="14.15625" PointY="8.1438427148437569" />
           <ConnectorPoint PointX="15.25" PointY="8.1438427148437569" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_product_menu1" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="6.5574446614583328" />
-          <ConnectorPoint PointX="3" PointY="6.5574446614583328" />
+        <AssociationConnector Association="posdbModel.fk_logininfo_user1" ManuallyRouted="false">
+          <ConnectorPoint PointX="19" PointY="8.6535953776041659" />
+          <ConnectorPoint PointX="19.75" PointY="8.6535953776041659" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_orderchild_ordermaster1" ManuallyRouted="false">
+        <AssociationConnector Association="posdbModel.fk_product_menu1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.5574446614583337" />
+          <ConnectorPoint PointX="3" PointY="6.5574446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="posdbModel.fk_orderchild_ordermaster1" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="10.501152846153847" />
           <ConnectorPoint PointX="4.875" PointY="10.126152846153847" />
           <ConnectorPoint PointX="4.875" PointY="4.5285953776041659" />
           <ConnectorPoint PointX="5.25" PointY="4.5285953776041659" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_orderchild_product1" ManuallyRouted="false">
+        <AssociationConnector Association="posdbModel.fk_orderchild_product1" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="5.2303930664062488" />
           <ConnectorPoint PointX="4.791666666666667" PointY="5.2303930664062479" />
           <ConnectorPoint PointX="4.958333333333333" PointY="5.2303930664062488" />
           <ConnectorPoint PointX="5.25" PointY="5.2303930664062488" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_ordermaster_servicetype1" ManuallyRouted="false">
+        <AssociationConnector Association="posdbModel.fk_ordermaster_servicetype1" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="12.518992513020834" />
           <ConnectorPoint PointX="3" PointY="12.518992513020834" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_securitygrouppermission_permissions1" ManuallyRouted="false">
+        <AssociationConnector Association="posdbModel.fk_securitygrouppermission_permissions1" ManuallyRouted="false">
           <ConnectorPoint PointX="16.75" PointY="1.6439925130208337" />
           <ConnectorPoint PointX="18.25" PointY="1.6439925130208337" />
           <ConnectorPoint PointX="18.25" PointY="3.625" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_product_productcategory1" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="3.8939925130208373" />
-          <ConnectorPoint PointX="3" PointY="3.8939925130208373" />
+        <AssociationConnector Association="posdbModel.fk_product_productcategory1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="3.8939925130208337" />
+          <ConnectorPoint PointX="3" PointY="3.8939925130208337" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_productbutton_product1" ManuallyRouted="false">
+        <AssociationConnector Association="posdbModel.fk_productbutton_product1" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="8.3362939453125016" />
           <ConnectorPoint PointX="4.791666666666667" PointY="8.3362939453125016" />
           <ConnectorPoint PointX="4.958333333333333" PointY="8.3362939453125016" />
           <ConnectorPoint PointX="5.25" PointY="8.3362939453125016" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_productingredients_product" ManuallyRouted="false">
+        <AssociationConnector Association="posdbModel.fk_productingredients_product" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="9.5236092764423113" />
           <ConnectorPoint PointX="4.8160744349011217" PointY="9.8396837113434312" />
           <ConnectorPoint PointX="4.9339255650988791" PointY="9.95753484154119" />
@@ -1459,30 +1541,30 @@
           <ConnectorPoint PointX="5.1875" PointY="10.186347153846153" />
           <ConnectorPoint PointX="5.2511528461538459" PointY="10.25" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_rawstocklistchild_rawstocklistmaster1" ManuallyRouted="false">
+        <AssociationConnector Association="posdbModel.fk_rawstocklistchild_rawstocklistmaster1" ManuallyRouted="false">
           <ConnectorPoint PointX="7.25" PointY="15.211293945312502" />
           <ConnectorPoint PointX="8" PointY="15.211293945312502" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_rawstocklistchild_rawstockproduct1" ManuallyRouted="false">
+        <AssociationConnector Association="posdbModel.fk_rawstocklistchild_rawstockproduct1" ManuallyRouted="false">
           <ConnectorPoint PointX="7.25" PointY="18.2112939453125" />
           <ConnectorPoint PointX="8.75" PointY="18.2112939453125" />
           <ConnectorPoint PointX="8.75" PointY="16.364889322916667" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_securitygrouppermission_securitygroup1" ManuallyRouted="false">
+        <AssociationConnector Association="posdbModel.fk_securitygrouppermission_securitygroup1" ManuallyRouted="false">
           <ConnectorPoint PointX="16.75" PointY="4.6151432291666694" />
           <ConnectorPoint PointX="17.5" PointY="4.6151432291666694" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_user_securitygroup1" ManuallyRouted="false">
+        <AssociationConnector Association="posdbModel.fk_user_securitygroup1" ManuallyRouted="false">
           <ConnectorPoint PointX="16.75" PointY="5.6041316121794926" />
           <ConnectorPoint PointX="17.125" PointY="5.9791316121794935" />
-          <ConnectorPoint PointX="17.125" PointY="8.65359537760417" />
-          <ConnectorPoint PointX="17.5" PointY="8.65359537760417" />
+          <ConnectorPoint PointX="17.125" PointY="8.6247460937500033" />
+          <ConnectorPoint PointX="17.5" PointY="8.6247460937500033" />
         </AssociationConnector>
-        <AssociationConnector Association="posModel.fk_user_staff1" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.75" PointY="7.9517976888020847" />
-          <ConnectorPoint PointX="17.041666666666668" PointY="7.9517976888020838" />
-          <ConnectorPoint PointX="17.208333333333332" PointY="7.9517976888020847" />
-          <ConnectorPoint PointX="17.5" PointY="7.9517976888020847" />
+        <AssociationConnector Association="posdbModel.fk_user_staff1" ManuallyRouted="false">
+          <ConnectorPoint PointX="16.75" PointY="7.8748730468750017" />
+          <ConnectorPoint PointX="17.041666666666668" PointY="7.8748730468750008" />
+          <ConnectorPoint PointX="17.208333333333332" PointY="7.8748730468750017" />
+          <ConnectorPoint PointX="17.5" PointY="7.8748730468750017" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

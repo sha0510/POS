@@ -11,28 +11,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using POS.Util;
 
 namespace POS.View
 {
     /// <summary>
-    /// Interaction logic for MenuView.xaml
+    /// Interaction logic for DepartmentView.xaml
     /// </summary>
-    public partial class MenuView : UserControl
+    public partial class DepartmentView : UserControl
     {
-        public MenuView()
+        public DepartmentView()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            Switcher.Switch(new DepartmentListView());
         }
     }
 }

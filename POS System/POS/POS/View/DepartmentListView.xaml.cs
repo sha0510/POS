@@ -16,23 +16,18 @@ using POS.Util;
 namespace POS.View
 {
     /// <summary>
-    /// Interaction logic for MenuView.xaml
+    /// Interaction logic for DepartmentListView.xaml
     /// </summary>
-    public partial class MenuView : UserControl
+    public partial class DepartmentListView : UserControl
     {
-        public MenuView()
+        public DepartmentListView()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void new_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
-        }
-
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            Switcher.Switch(new DepartmentListView());
+            Switcher.Switch(new DepartmentView());
         }
     }
 }

@@ -64,9 +64,23 @@
     </ApplicationDefinition>
     <Compile Include="Util\ISwitchable.cs" />
     <Compile Include="Util\Switcher.cs" />
+    <Compile Include="View\DepartmentListView.xaml.cs">
+      <DependentUpon>DepartmentListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView.xaml.cs">
+      <DependentUpon>DepartmentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MenuView.xaml.cs">
       <DependentUpon>MenuView.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\DepartmentListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DepartmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

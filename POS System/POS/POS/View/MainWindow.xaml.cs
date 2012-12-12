@@ -25,7 +25,7 @@ namespace POS
         {
             InitializeComponent();
             Switcher.pageSwitcher = this;
-            Switcher.Switch(new DepartmentListView());            
+            Switcher.Switch(new LoginView());            
         }
 
         public void Navigate(UserControl nextPage)

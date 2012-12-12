@@ -95,4 +95,10 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style TargetType="{x:Type DataGridColumnHeader}" x:Key="GridHeaderText">
+        <Setter Property="FontSize" Value="22"/>
+    </Style>
+    
+
+
 </ResourceDictionary>

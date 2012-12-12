@@ -16,8 +16,8 @@
         <Grid>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="30*" />
-                <ColumnDefinition  Width="70*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition  Width="527*" />
 
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
@@ -28,20 +28,25 @@
                         <RowDefinition Height="20*" />
                         <RowDefinition Height="20*" />
                 </Grid.RowDefinitions>
-                <Button  Style="{DynamicResource RoundedButton }" Background="LightBlue" BorderBrush="#95FFFFFF" FontSize="22" Content="Insert" Height="36" HorizontalAlignment="Left" Margin="12,12,0,0" Name="button1" VerticalAlignment="Top" Width="158"  />
-                <Button Style="{DynamicResource RoundedButton }" Background="LightBlue" BorderBrush="#95FFFFFF" FontSize="22" Grid.Row="2" Content="Delete" HorizontalAlignment="Left"  Name="button2"  Width="158" Margin="12,30,0,14" />
-                <Button  Style="{DynamicResource RoundedButton }" Background="LightBlue" BorderBrush="#95FFFFFF" FontSize="22" Grid.Row="1" Content="Update" Height="36" HorizontalAlignment="Left" Margin="15,28,0,0" Name="button3" VerticalAlignment="Top" Width="155"  />
-                <Button  Style="{DynamicResource RoundedButton }" Background="LightBlue" BorderBrush="#95FFFFFF" FontSize="22" Grid.Row="3" Content="Cancel" Height="38" HorizontalAlignment="Left" Margin="15,22,0,0" Name="cancel" VerticalAlignment="Top" Width="155" Click="cancel_Click"/>
+                <Button  Style="{DynamicResource RoundedButton }"  Background="LightBlue"  BorderBrush="#95FFFFFF" FontSize="22" Content="Insert" Height="72" HorizontalAlignment="Left" Margin="12,33,0,0" Name="button1" VerticalAlignment="Top" Width="152"  />
+                <Button Style="{DynamicResource RoundedButton }" Background="LightBlue" BorderBrush="#95FFFFFF" FontSize="22" Grid.Row="2" Content="Delete" HorizontalAlignment="Left"  Name="button2"  Width="152" Margin="12,33,0,37" Height="72" />
+                <Button  Style="{DynamicResource RoundedButton }" Background="LightBlue" BorderBrush="#95FFFFFF" FontSize="22" Grid.Row="1" Content="Update " Height="72" HorizontalAlignment="Left" Margin="12,32,0,0" Name="button3" VerticalAlignment="Top" Width="155"  />
+                <Button  Style="{DynamicResource RoundedButton }" Background="LightBlue" BorderBrush="#95FFFFFF" FontSize="22" Grid.Row="3" Content="Cancel" Height="72" HorizontalAlignment="Left" Margin="9,34,0,0" Name="cancel" VerticalAlignment="Top" Width="155" Click="cancel_Click"/>
             </Grid>
-            <DataGrid IsReadOnly="True"  Grid.Column="1"  AutoGenerateColumns="False"  ItemsPanel="{Binding}"  CanUserSortColumns="False"  Name="dataGrid1" SelectionChanged="dataGrid1_SelectionChanged" Height="auto" Width="auto" Margin="0,1,15,1" RowHeight="30" ColumnWidth="100" RowBackground="LightYellow" AlternatingRowBackground="LightBlue" GridLinesVisibility="Vertical" HeadersVisibility="All"  HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+            <DataGrid  BorderBrush="Gray" BorderThickness="1"  Grid.Column="1"  AutoGenerateColumns="False"  ItemsPanel="{Binding}"  
+                       CanUserSortColumns="False"  VerticalAlignment="Top"
+                        Name="dataGrid1" SelectionChanged="dataGrid1_SelectionChanged" Height="auto" Width="auto"
+                        Margin="0,1,15,1" RowHeight="30" ColumnWidth="200" RowBackground="LightYellow"
+                        AlternatingRowBackground="LightBlue" GridLinesVisibility="Vertical"
+                       CanUserResizeColumns="False" CanUserReorderColumns="False">
 
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="menuIdColumn" Binding="{Binding Path=id}" Header="Menu Id" Width="SizeToHeader" Visibility="Hidden" />
-                    <DataGridTextColumn x:Name="menuNameColumn" Binding="{Binding Path=name}" Header="Menu Name" Width="SizeToHeader" />
-                    <DataGridTextColumn x:Name="menuDescColumn" Binding="{Binding Path=description}" Header="Menu Description" Width="SizeToHeader" />
-                    <DataGridTextColumn x:Name="menuPositionColumn" Binding="{Binding Path=position}" Header="Menu Position" Width="SizeToHeader" />
-                    <DataGridTextColumn x:Name="menuButColorColumn" Binding="{Binding Path=buttoncolor}" Header="Menu_B_Color" Width="SizeToHeader" />
-                    <DataGridTextColumn x:Name="menuButTexColorColumn" Binding="{Binding Path=buttontextcolor}" Header="Menu B_Text_Color" Width="SizeToHeader" />
+                    <DataGridTextColumn x:Name="menuNameColumn" Binding="{Binding Path=name}" Header="Name"  HeaderStyle="{DynamicResource GridHeaderText}"  />
+                    <DataGridTextColumn x:Name="menuDescColumn" Binding="{Binding Path=description}" Header="Description"  HeaderStyle="{DynamicResource GridHeaderText}" />
+                    <DataGridTextColumn x:Name="menuPositionColumn" Binding="{Binding Path=position}" Header="Position"  HeaderStyle="{DynamicResource GridHeaderText}" />
+                    <DataGridTextColumn x:Name="menuButColorColumn" Binding="{Binding Path=buttoncolor}" Header="ButtonColor"  HeaderStyle="{DynamicResource GridHeaderText}" />
+                    <DataGridTextColumn x:Name="menuButTexColorColumn" Binding="{Binding Path=buttontextcolor}" Header="ButtonTextColor"  HeaderStyle="{DynamicResource GridHeaderText}" />
 
                 </DataGrid.Columns>
             </DataGrid>

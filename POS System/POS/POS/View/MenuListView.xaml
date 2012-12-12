@@ -5,11 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="619" d:DesignWidth="750">
+   
     <Border CornerRadius="10" BorderBrush="LightBlue" BorderThickness="3" Background="Beige" Margin="18" Padding="4" Height="332" Width="762">
         <Border.Effect>
             <DropShadowEffect Color="Gray" Opacity=".5" ShadowDepth="16" />
+
         </Border.Effect>
 
+        
         <Grid>
 
             <Grid.ColumnDefinitions>
@@ -25,10 +28,10 @@
                         <RowDefinition Height="20*" />
                         <RowDefinition Height="20*" />
                 </Grid.RowDefinitions>
-                <Button  FontSize="22" Content="Insert" Height="36" HorizontalAlignment="Left" Margin="12,12,0,0" Name="button1" VerticalAlignment="Top" Width="158"  />
-                <Button FontSize="22" Grid.Row="2" Content="Delete" HorizontalAlignment="Left"  Name="button2"  Width="158" Margin="12,30,0,14" />
-                <Button FontSize="22" Grid.Row="1" Content="Update" Height="36" HorizontalAlignment="Left" Margin="15,28,0,0" Name="button3" VerticalAlignment="Top" Width="155"  />
-                <Button  FontSize="22" Grid.Row="3" Content="Cancel" Height="38" HorizontalAlignment="Left" Margin="15,22,0,0" Name="cancel" VerticalAlignment="Top" Width="155" Click="cancel_Click"/>
+                <Button  Style="{DynamicResource RoundedButton }" Background="LightBlue" BorderBrush="#95FFFFFF" FontSize="22" Content="Insert" Height="36" HorizontalAlignment="Left" Margin="12,12,0,0" Name="button1" VerticalAlignment="Top" Width="158"  />
+                <Button Style="{DynamicResource RoundedButton }" Background="LightBlue" BorderBrush="#95FFFFFF" FontSize="22" Grid.Row="2" Content="Delete" HorizontalAlignment="Left"  Name="button2"  Width="158" Margin="12,30,0,14" />
+                <Button  Style="{DynamicResource RoundedButton }" Background="LightBlue" BorderBrush="#95FFFFFF" FontSize="22" Grid.Row="1" Content="Update" Height="36" HorizontalAlignment="Left" Margin="15,28,0,0" Name="button3" VerticalAlignment="Top" Width="155"  />
+                <Button  Style="{DynamicResource RoundedButton }" Background="LightBlue" BorderBrush="#95FFFFFF" FontSize="22" Grid.Row="3" Content="Cancel" Height="38" HorizontalAlignment="Left" Margin="15,22,0,0" Name="cancel" VerticalAlignment="Top" Width="155" Click="cancel_Click"/>
             </Grid>
             <DataGrid IsReadOnly="True"  Grid.Column="1"  AutoGenerateColumns="False"  ItemsPanel="{Binding}"  CanUserSortColumns="False"  Name="dataGrid1" SelectionChanged="dataGrid1_SelectionChanged" Height="auto" Width="auto" Margin="0,1,15,1" RowHeight="30" ColumnWidth="100" RowBackground="LightYellow" AlternatingRowBackground="LightBlue" GridLinesVisibility="Vertical" HeadersVisibility="All"  HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
 

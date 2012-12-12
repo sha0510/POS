@@ -73,8 +73,8 @@
     <Compile Include="View\MenuListView.xaml.cs">
       <DependentUpon>MenuListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MenuView.xaml.cs">
-      <DependentUpon>MenuView.xaml</DependentUpon>
+    <Compile Include="View\InnerView.xaml.cs">
+      <DependentUpon>InnerView.xaml</DependentUpon>
     </Compile>
     <Page Include="View\DepartmentListView.xaml">
       <SubType>Designer</SubType>
@@ -107,7 +107,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MenuView.xaml">
+    <Page Include="View\InnerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

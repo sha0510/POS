@@ -16,11 +16,11 @@ using POS.Util;
 namespace POS.View
 {
     /// <summary>
-    /// Interaction logic for MenuView.xaml
+    /// Interaction logic for InnerView.xaml
     /// </summary>
-    public partial class MenuView : UserControl
+    public partial class InnerView : UserControl
     {
-        public MenuView()
+        public InnerView()
         {
             InitializeComponent();
         }

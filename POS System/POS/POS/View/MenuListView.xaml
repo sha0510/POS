@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="619" d:DesignWidth="750">
    
-    <Border CornerRadius="10" BorderBrush="LightBlue" BorderThickness="3" Background="Beige" Margin="18" Padding="4" Height="332" Width="762">
+    <Border CornerRadius="10" BorderBrush="LightBlue" BorderThickness="3" Background="Beige" Margin="18" Padding="4" Height="Auto" Width="Auto">
         <Border.Effect>
             <DropShadowEffect Color="Gray" Opacity=".5" ShadowDepth="16" />
 
